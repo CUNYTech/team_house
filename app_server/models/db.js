@@ -56,7 +56,7 @@ var houseSchema = new Schema({
   sellPrice : {type : Number, min: 0, "default" : 0, index: true},
   rentPrice : {type : Number, min: 0, "default" : 0, index: true},
   img       : {type : [Buffer], contentType: String},
-  coords    : {type : [Number], index: '2dsphere}
+  coords    : {type : [Number], index: '2dsphere'}
 });
 
 var userSchema = new Schema({
