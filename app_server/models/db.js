@@ -53,8 +53,10 @@ var houseSchema = new Schema({
   phone     : {type : String, index : true},
   features  : {type : [String]},
   listDate  : {type : Date , index: true},
-  price     : {type : Number, min: 1, index: true},
-  img       : {type : [Buffer], contentType: String}
+  sellPrice : {type : Number, min: 0, "default" : 0, index: true},
+  rentPrice : {type : Number, min: 0, "default" : 0, index: true},
+  img       : {type : [Buffer], contentType: String},
+  coords    : {type : [Number], index: '2dsphere}
 });
 
 var userSchema = new Schema({
