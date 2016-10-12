@@ -1,7 +1,11 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI = 'mongodb://localhost/database';
-mongoose.connect(dbURI);
+//var dbURI = 'mongodb://localhost/database';
+var dbURI = 'mongodb://homefinder:CunyCode123@ds049436.mlab.com:49436/findinghome';
+//mongoose.connect(dbURI);
+
+//Mlab Connection URL
+mongoose.connect('mongodb://homefinder:CunyCode123@ds049436.mlab.com:49436/findinghome');
 
 mongoose.connection.on('connected', function(){
   console.log('Mongoose connected to ',+ dbURI);

@@ -1,9 +1,12 @@
+//Dependencies 
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
+//Database Setup
 require('./app_server/models/db');
 
 var routes = require('./app_server/routes/index');
@@ -57,5 +60,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
+//Starts server on port 1000
+app.listen(1000);
 
 module.exports = app;
