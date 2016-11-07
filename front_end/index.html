@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html >
 
 <head>
 
@@ -40,12 +40,13 @@
 
   <script src="node_modules/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
 
+  <script src="index.js"></script> 
+
 </head>
 
-<!--Added ng-app -->
+<body ng-app="homeFinder" ng-controller="mainBody">
 
-<body ng-app="formlyApp" ng-controller="Controller as vm">
-
+  <h1>{{what}}</h1>
   <nav class="navbar navbar-default" style="background:grey;">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -266,10 +267,16 @@
       </div>
     </div>
 
+  <script>
+    var app = angular.module('homeFinder', []);
 
+    app.controller("mainBody", [$scope, function($scope){
+        $scope.what = "Home Finder";
+    }]);
+  </script>
+
+ 
   </body>
-
+   
 
   </html>
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
