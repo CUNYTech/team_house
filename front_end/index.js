@@ -1,17 +1,16 @@
 //AngularJS for the index.html
-var app = angular.module('homeFinder', []);
+var app = angular.module('homeFinder', ["ngRoute"]);
 
-app.controller("mainBody", [$scope, function($scope){
+app.controller('mainBody', function($scope){
     $scope.what = "Home Finder";
-}]);
+});
 
-app.config("homeFinder", ["ngRoute", function($ngRoute){
-    $ngRoute
+app.config(function($routeProvider){
+    $routeProvider
     .when("/", {
         templateUrl : "index.html"
     })
     .when("/hello", {
-        templateUrl : "hello.html"
+        templateUrl : "hello.htm"
     });
-}]);
-
+});
