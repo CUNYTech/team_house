@@ -6,9 +6,16 @@ app.controller('mainBody', function($scope){
 });
 
 app.controller('registerModal', function($scope){
-    $scope.signup = "Sign Up";
-    $scope.firstname = "Daniel";
-    console.log($scope.firstname);
+    $scope.firstname = '';
+    $scope.lastname = '';
+    $scope.username = '';
+    $scope.emailAddress = '';
+    $scope.password = '';
+    $scope.confPassword = '';
+    
+    // $scope.$watch('firstname', function(firstname){
+    //     console.log(firstname)
+    // });
 });
 
 app.config(function($routeProvider){
