@@ -17,5 +17,7 @@ form h2{
     text-align: center;
 }
 
-
-
+.img-responsive{
+  height: 300px;
+  width: 530px;
+}

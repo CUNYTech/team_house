@@ -1,122 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Home Finder</title>
+  <title>Home Finder</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    
-    <!-- W3 School Css-->
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-    
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    
-    <!-- Custom javascript -->
-    <script src="js/app.js"></script>
-    
-    <!-- Custom CSS -->
-    <link href="css/mystyle.css" rel="stylesheet">
+  <!-- W3 School Css-->
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
+  <!-- node_modules -->
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <link href="bootstrap.html">
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link href="css/mystyle.css" rel="stylesheet">
+
+  <script type="text/javascript" src= "js/angular.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <script src="node_modules/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+  <script src="index.js"></script>
 </head>
 
-<body>
-    <h1>Home Finder</h1>
-        <div>
-            <!-- Forms-->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right"> 
-                    <li >
-                    
-                        <form class="form-inline ">
-                            <div class="form-group">
-                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                              </div>
-                              <div class="form-group">
-                                <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
-                              </div>
-                                <button type="submit" class="w3-btn w3-white w3-border w3-round-large">Sign in</button>
-                            
-                            
-                                <button class="w3-btn w3-white w3-border w3-round-large"><a href="signup.html" style="text-decoration:none;">Sign up</a></button>
-                            
-                        </form>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    
+<body ng-app="homeFinder" ng-controller="mainBody">
 
-    <!-- Page Content -->
-    <div class="container">
-        <!-- Page Header -->
+  <h1>{{what}}</h1>
+  <nav class="navbar navbar-default" style="background:grey;">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html" style="color:orange;">Home Finder</a>
+
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <!-- Zipcode Search Bar -->
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Your Zipcode">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <!-- End of Zipcode Search Bar -->
+
+        <!-- Account SignIn/SignUp (changes in progress) -->
+        <ul class="nav navbar-nav navbar-right" ng-app="login">
+          <li>
+
+            <form class="navbar-form navbar-right">
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+
+              </div>
+
+              <button type="submit" class="w3-btn w3-white w3-border w3-round-large">Sign in</button>
+              <button type="submit" class="w3-btn w3-orange w3-border w3-round-large"><a href="#signup" data-toggle = "modal" >Register</a></button>
+            </form>
+
+
+
+          </li>
+        </ul>
+
+          <!-- End of Account SignIn/SignUp -->
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <!-- Page Header -->
+    <div class="row">
+      <div class="col-lg-12">
+        <br>
+        <h1>Where Finding a Home is Made Easy</h1>
+
+        <!-- /.row -->
+
+        <!-- Projects Row -->
         <div class="row">
-            <div class="col-lg-12">
-                <br>
-                    <h1>Where Finding a Home is Made Easy</h1>
-            </div>
+          <div class="col-md-6 portfolio-item">
+            <a href="#">
+              <img class="img-responsive" src="home_photos/home1.jpg" alt="">
+            </a>
+            <h3>
+              <a href="#">$500,000</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+          </div>
+          <div class="col-md-6 portfolio-item">
+            <a href="#">
+              <img class="img-responsive" src="home_photos/home2.jpg" alt="">
+            </a>
+            <h3>
+              <a href="#">$350,000</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+          </div>
         </div>
         <!-- /.row -->
 
         <!-- Projects Row -->
         <div class="row">
-            <div class="col-md-6 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="home_photos/home1.jpg" alt="">
-                </a>
-                <h3>
-                    <a href="#">$500,000</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-6 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="home_photos/home2.jpg" alt="">
-                </a>
-                <h3>
-                    <a href="#">$350,000</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-6 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="home_photos/home3.jpg" alt="">
-                </a>
-                <h3>
-                    <a href="#">$100,000</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-6 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="home_photos/home4.JPG" alt="">
-                </a>
-                <h3>
-                    <a href="#">$250,000</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
+          <div class="col-md-6 portfolio-item">
+            <a href="#">
+              <img class="img-responsive" src="home_photos/home3.jpg" alt="">
+            </a>
+            <h3>
+              <a href="#">$100,000</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+          </div>
+          <div class="col-md-6 portfolio-item">
+            <a href="#">
+              <img class="img-responsive" src="home_photos/home4.JPG" alt="">
+            </a>
+            <h3>
+              <a href="#">$250,000</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+          </div>
         </div>
         <!-- /.row -->
 
@@ -124,35 +166,109 @@
 
         <!-- Pagination -->
         <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li>
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
+          <div class="col-lg-12">
+            <ul class="pagination">
+              <li>
+                <a href="#">&laquo;</a>
+              </li>
+              <li>
+                <a href="#">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+              <li>
+                <a href="#">&raquo;</a>
+              </li>
+            </ul>
+          </div>
         </div>
         <!-- /.row -->
 
         <hr>
 
+      </div>
     </div>
-    <!-- /.container -->
+  </div>
+  <!--Modal-->
+  <div class="modal fade" id = "signup" role="dialog" ng-controller="registerModal">
+    <div class= "modal-dialog">
+      <div class= "modal-content">
+        <div class= "modal-header">
+          <h4>Sign Up</h4>
+        </div>
 
-    
+        <div class = "modal-body">
+          <form>
+            <hr class="graph">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label for="inputFirstName">First Name</label>
+                  <input class="form-control input-lg" placeholder="First Name" type="text" id="inputFirstName" tabindex="1" ng-model="firstname">
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label for="inputLastName">Last Name</label>
+                  <input class="form-control input-lg" placeholder="Last Name" type="text" id="inputLastName" tabindex="2" ng-model="lastname">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="inputUserName">User Name</label>
+              <input class="form-control input-lg" placeholder="User Name" type="text" id="inputUserName" tabindex="3" ng-model="username">
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Email Address</label>
+              <input class="form-control input-lg" placeholder="Email Address" type="text" id="inputEmailAddress" tabindex="4" ng-model="emailAddress">
+            </div>
+
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label for="inputPassword">Password</label>
+                  <input type="password" id="inputPassword" class="form-control input-lg" placeholder="Password" tabindex="5" ng-model="password">
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label for="inputPassword_confimation">Confirm Password</label>
+                  <input type="password" id="inputPassword_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6" ng-model="confPassword">
+                </div>
+              </div>
+            </div>
+
+            <hr class="graph">
+            <div class="modal-footer">
+
+              <div class="register_button">
+                <div class="col-xs-12 col-md-6">
+                  <input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">
+                </div>
+              </div>
+
+
+              <div class="col-xs-12 col-md-6">
+
+                <button class="btn btn-primary btn-block btn-lg"><a href="index.html" style="text-decoration:none; color:white">Close</a></button>
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 </body>
-
 </html>
