@@ -8,8 +8,7 @@ const express = require('express'),
     passportService = require('./config/passport'),
     fourm = require('./models/fourm')(mongoose);
 
-router.use(express.static(path.join(__dirname, 'client')));
-router.use(express.static(path.join(__dirname, 'views')));
+router.use(express.static(path.join(__dirname, 'front_end')));
 
 const requireAuth = passport.authenticate('jwt', {
     session: false
@@ -99,7 +98,7 @@ router.get('/post', requireAuth, function(req, res) {
 });
 
 router.use('*', function(req, res) {
-    let index = path.resolve(__dirname, 'views/index.html');
+    let index = path.resolve(__dirname, 'front_end/index.html');
     res.sendFile(index);
 });
 
