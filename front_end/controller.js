@@ -7,8 +7,11 @@ app.controller('signIn', ['$scope', '$http', function($scope, $http){
         console.log($scope.user);
         //$http.post('/login', $scope.user).then(successCallBack, errorCallback);   
         $http.post('/login', $scope.user)
-            .success(console.log("success"))
-            .error(console.log("error"));
+            .success(function(response){
+
+            }).error(function(error){
+                console.log(error);
+            });
     };
 }]);
 
