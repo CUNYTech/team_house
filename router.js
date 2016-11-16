@@ -9,6 +9,7 @@ const express = require('express'),
     fourm = require('./models/fourm')(mongoose);
 
 router.use(express.static(path.join(__dirname, 'front_end')));
+router.use(express.static(path.join(__dirname, 'front_end/home')));
 
 const requireAuth = passport.authenticate('jwt', {
     session: false
