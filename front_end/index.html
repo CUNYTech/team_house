@@ -41,9 +41,7 @@
     <script src="node_modules/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
 </head>
 
-<body ng-app="homeFinder" ng-controller="mainBody">
-
-    <h1>{{what}}</h1>
+<body ng-app="homeFinder">
     <nav class="navbar navbar-default" style="background:grey;">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -71,24 +69,23 @@
                 <!-- End of Zipcode Search Bar -->
 
                 <!-- Account SignIn/SignUp (changes in progress) -->
-                <ul class="nav navbar-nav navbar-right" ng-app="login">
+                <ul class="nav navbar-nav navbar-right" ng-controller="signIn">
                     <li>
 
                         <form class="navbar-form navbar-right">
                             <div class="form-group">
-                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                                <label class="sr-only" for="exampleInputEmail3"> Email address </label>
+                                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" ng-model="user.email">
                             </div>
                             <div class="form-group">
-                                <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+                                <label class="sr-only" for="exampleInputPassword3" >Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password" ng-model="user.password">
 
                             </div>
 
-                            <button type="submit" class="w3-btn w3-white w3-border w3-round-large">Sign in</button>
+                            <button type="submit" class="w3-btn w3-white w3-border w3-round-large" ng-click="logInUser()">Sign in</button>
                             <button type="submit" class="w3-btn w3-orange w3-border w3-round-large"><a href="#signup" data-toggle = "modal" >Register</a></button>
                         </form>
-
 
 
                     </li>
@@ -191,7 +188,7 @@
     </div>
     <!--Modal-->
 
-    <div class="modal fade" id="signup" role="dialog">
+    <div class="modal fade" id="signup" role="dialog" ng-controller="signUp">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
