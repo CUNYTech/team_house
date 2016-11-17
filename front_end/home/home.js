@@ -8,7 +8,9 @@ app.controller('signIn', ['$scope', '$http', function($scope, $http){
         //$http.post('/login', $scope.user).then(successCallBack, errorCallback);   
         $http.post('/login', $scope.user)
             .success(function(response){
-
+                console.log("hello");
+                $scope.loggedIn = true;
+                $scope.fullName = "Allan Scrumaster";
             })
             .error(function(error){
                 console.log(error);
@@ -19,6 +21,8 @@ app.controller('signIn', ['$scope', '$http', function($scope, $http){
         $scope.userInfo = response.data;
         console.log(response.data);
     });
+
+
 }]);
 
 app.controller('signUp', ['$scope', '$http', function($scope, $http){
