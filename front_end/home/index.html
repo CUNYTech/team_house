@@ -47,11 +47,11 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <!-- Zipcode Search Bar -->
-                <form class="navbar-form navbar-left">
+                <form class="navbar-form navbar-left" ng-controller="signIn">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Enter Your Zipcode">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button ng-click="test()" type="submit" class="btn btn-default">Submit</button>
                 </form>
                 <!-- End of Zipcode Search Bar -->
 
@@ -59,23 +59,23 @@
                 <ul class="nav navbar-nav navbar-right" ng-controller="signIn">
                     <li>
                         <div ng-show="!loggedIn">
-                        <form class="navbar-form navbar-right">
-                            <div class="form-group">
-                                <label class="sr-only" for="exampleInputEmail3"> Email address </label>
-                                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" ng-model="user.email">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password" ng-model="user.password">
+                            <form class="navbar-form navbar-right">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputEmail3"> Email address </label>
+                                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" ng-model="user.email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password" ng-model="user.password">
 
-                            </div>
+                                </div>
 
-                            <button type="submit" class="w3-btn w3-white w3-border w3-round-large" ng-click="logInUser()">Sign in</button>
-                            <button type="submit" class="w3-btn w3-orange w3-border w3-round-large" href="#signup" data-toggle="modal">Register</button>
-                        </form>
+                                <button type="submit" class="w3-btn w3-white w3-border w3-round-large" ng-click="logInUser()">Sign in</button>
+                                <button type="submit" class="w3-btn w3-orange w3-border w3-round-large" href="#signup" data-toggle="modal">Register</button>
+                            </form>
                         </div>
                         <div ng-show="loggedIn">
-                                <a class=navbar-text style="color:orange;">{{fullName}}</a>
+                            <a class=navbar-text style="color:orange;">{{fullName}}</a>
                         </div>
 
                     </li>
@@ -255,6 +255,8 @@
     </div>
 
     <script src="home/home.js"></script>
+    <script src="service/authToken.js"></script>
+
 </body>
 
 </html>

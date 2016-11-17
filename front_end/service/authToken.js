@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('homeFinder')
         .factory('authToken', authToken);
 
     authToken.$inject = ['$window', '$http'];
@@ -15,7 +15,7 @@
 
         var authToken = {
             setToken: function(token) {
-                cachedToken = token;
+                cachedToken = 'JWT ' + token;
                 storage.setItem(userToken, token);
             },
             getToken: function() {
@@ -37,26 +37,6 @@
                 cachedToken = null;
                 storage.removeItem(userToken);
                 $http.defaults.headers.common.Authorization = '';
-            },
-            register: function(user) {
-                return $http.post('/register', user)
-                    .success(function(response) {
-                        authToken.setToken(response.token);
-                        $http.defaults.headers.common.Authorization = 'JWT ' + response.token;
-                    });
-            },
-            login: function(user) {
-                return $http.post('/login', user)
-                    .success(function(response) {
-                        authToken.setToken(response.token);
-                        $http.defaults.headers.common.Authorization = 'JWT ' + response.token;
-                    });
-            },
-            profile: function() {
-                return $http.get('/user')
-                    .success(function(response) {
-                        return response.data;
-                    });
             }
         };
 
