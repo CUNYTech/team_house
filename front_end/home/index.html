@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" ng-app="homeFinder">
 
 <head>
 
@@ -11,38 +11,25 @@
 
     <title>Home Finder</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-
     <!-- W3 School Css-->
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 
-    <!-- node_modules -->
-    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
-
-    <link href="bootstrap.html">
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
 
     <!-- Custom CSS -->
     <link href="css/mystyle.css" rel="stylesheet">
 
-    <script type="text/javascript" src="js/angular.min.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <script src="node_modules/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
 </head>
 
-<body ng-app="homeFinder">
-    <nav class="navbar navbar-default" style="background:grey;">
+<body>
+    <div class="navbar navbar-default" style="background:grey;">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -78,13 +65,13 @@
                                 <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" ng-model="user.email">
                             </div>
                             <div class="form-group">
-                                <label class="sr-only" for="exampleInputPassword3" >Password</label>
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
                                 <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password" ng-model="user.password">
 
                             </div>
 
                             <button type="submit" class="w3-btn w3-white w3-border w3-round-large" ng-click="logInUser()">Sign in</button>
-                            <button type="submit" class="w3-btn w3-orange w3-border w3-round-large" href="#signup" data-toggle = "modal">Register</button>
+                            <button type="submit" class="w3-btn w3-orange w3-border w3-round-large" href="#signup" data-toggle="modal">Register</button>
                         </form>
 
 
@@ -97,7 +84,7 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
-    </nav>
+    </div>
 
     <!-- Page Content -->
     <div class="container">
@@ -264,10 +251,7 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-    <script src="home.js"></script>
+    <script src="home/home.js"></script>
 </body>
 
 </html>
