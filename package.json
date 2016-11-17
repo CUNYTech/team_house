@@ -9,7 +9,6 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "angular": "^1.5.8",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.15.1",
     "express": "~4.13.4",
