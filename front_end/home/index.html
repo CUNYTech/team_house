@@ -58,7 +58,7 @@
                 <!-- Account SignIn/SignUp (changes in progress) -->
                 <ul class="nav navbar-nav navbar-right" ng-controller="signIn">
                     <li>
-
+                        <div ng-show="!loggedIn">
                         <form class="navbar-form navbar-right">
                             <div class="form-group">
                                 <label class="sr-only" for="exampleInputEmail3"> Email address </label>
@@ -73,7 +73,10 @@
                             <button type="submit" class="w3-btn w3-white w3-border w3-round-large" ng-click="logInUser()">Sign in</button>
                             <button type="submit" class="w3-btn w3-orange w3-border w3-round-large" href="#signup" data-toggle="modal">Register</button>
                         </form>
-
+                        </div>
+                        <div ng-show="loggedIn">
+                                <a class=navbar-text style="color:orange;">{{fullName}}</a>
+                        </div>
 
                     </li>
                 </ul>
