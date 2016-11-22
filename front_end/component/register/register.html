@@ -1,0 +1,34 @@
+<div class="col-md-6">
+    <form>
+        <div class="form-group">
+            <label for="inputLastName">Full Name</label>
+            <input class="form-control input-lg" placeholder="Full Name" type="text" id="inputLastName" tabindex="2" ng-model="user.fullname">
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Email Address</label>
+            <input class="form-control input-lg" placeholder="Email Address" type="text" id="inputEmailAddress" tabindex="4" ng-model="user.email">
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" id="inputPassword" class="form-control input-lg" placeholder="Password" tabindex="5" ng-model="user.password">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="inputPassword_confimation">Confirm Password</label>
+                    <input type="password" id="inputPassword_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6"
+                        ng-model="user.confPassword">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <button class="btn btn-primary btn-block btn-lg" ng-click="registerUser()">Register</button>
+        </div>
+    </form>
+</div>
