@@ -13,7 +13,8 @@
                 templateUrl: 'component/home/home.html'
             })
             .when('/register', {
-                templateUrl: 'component/register/register.html'
+                templateUrl: 'component/register/register.html',
+                controller: "RegisterController"
             })
             .otherwise({
                 redirectTo: '/'
