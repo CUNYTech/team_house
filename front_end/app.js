@@ -15,6 +15,9 @@
             .when('/register', {
                 templateUrl: 'component/register/register.html'
             })
+            .when('/profile', {
+                templateUrl: 'profile/profile.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });

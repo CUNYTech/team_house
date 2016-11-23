@@ -1,4 +1,4 @@
-;(function(window) {
+(function(window) {
 
 angular.module('app', [])
 
@@ -17,7 +17,7 @@ angular.module('app', [])
               }
             }
         })
-    
+
         .directive('tabset', function() {
               return {
                 restrict: 'E',
@@ -37,7 +37,7 @@ angular.module('app', [])
                         tab.active = true
                       }
                     }
-                  
+
                   self.select = function(selectedTab) {
                       angular.forEach(self.tabs, function(tab) {
                         if(tab.active && tab !== selectedTab) {
@@ -50,5 +50,5 @@ angular.module('app', [])
                 }
               }
     })
-    
+
 })(window);
