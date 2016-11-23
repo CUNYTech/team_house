@@ -12,8 +12,13 @@
             .when('/', {
                 templateUrl: 'component/home/home.html'
             })
+            .when('/login', {
+                templateUrl: 'component/login/login.html',
+                controller: 'LoginController'
+            })
             .when('/register', {
-                templateUrl: 'component/register/register.html'
+                templateUrl: 'component/register/register.html',
+                controller: 'RegisterController'
             })
             .when('/profile', {
                 templateUrl: 'profile/profile.html'
