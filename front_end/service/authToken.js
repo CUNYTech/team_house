@@ -15,7 +15,7 @@
 
         var authToken = {
             setToken: function(token) {
-                cachedToken = 'JWT ' + token;
+                cachedToken = token;
                 storage.setItem(userToken, token);
             },
             getToken: function() {

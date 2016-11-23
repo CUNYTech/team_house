@@ -13,7 +13,7 @@ catch(e){
 // Generate JWT
 // TO-DO Add issuer and audience
 function generateToken(user) {
-  return jwt.sign(user, config.SECRET, {
+  return 'JWT ' + jwt.sign(user, config.SECRET, {
     expiresIn: 10080 // in seconds
   });
 }

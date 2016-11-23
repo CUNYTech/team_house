@@ -31,7 +31,7 @@
 
     function run($http, $window) {
         if ($window.localStorage['token']) {
-             $http.defaults.headers.common['Authorization'] = 'JWT ' + $window.localStorage['token'];
+             $http.defaults.headers.common['Authorization'] = $window.localStorage['token'];
         }
     }
 })();

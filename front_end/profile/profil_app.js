@@ -1,6 +1,6 @@
 (function(window) {
 
-angular.module('app', [])
+angular.module('homeFinder', [])
 
             .directive('tab', function() {
           return {
