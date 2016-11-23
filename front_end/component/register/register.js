@@ -4,15 +4,17 @@
     angular
          //.module('homeFinder', ['ngRoute'])
         .module('homeFinder')
-        .controller('RegisterController', ['$scope', '$http', 'authToken', function($scope, $http, authToken) {
+        .controller('RegisterController', ['$scope', '$http', '$location','authToken', function($scope, $http, $location,authToken) {
             $scope.registerUser = function() {
-                console.log($scope.user);
-                $http.post('/register', $scope.user).
-                success(function(response) {
-                    //console.log($scope.user);
-                    authToken.setToken(response.token);
-                    $http.defaults.headers.common.Authorization = 'JWT ' + response.token;
-                })
-            }
+                $http.post('/register', $scope.user)
+                    .success(function(response) {
+                        $location.path('/');
+                        authToken.setToken(response.token);
+                        $http.defaults.headers.common.Authorization = response.token;
+                    })
+                    .error(function(error){
+                        console.log(error.error);
+                    });
+            };
         }]);
 })();

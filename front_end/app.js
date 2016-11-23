@@ -20,6 +20,9 @@
                 templateUrl: 'component/register/register.html',
                 controller: 'RegisterController'
             })
+            .when('/profile', {
+                templateUrl: 'profile/profile.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -28,7 +31,7 @@
 
     function run($http, $window) {
         if ($window.localStorage['token']) {
-             $http.defaults.headers.common['Authorization'] = 'JWT ' + $window.localStorage['token'];
+             $http.defaults.headers.common['Authorization'] = $window.localStorage['token'];
         }
     }
 })();
