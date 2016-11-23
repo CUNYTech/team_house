@@ -12,9 +12,13 @@
             .when('/', {
                 templateUrl: 'component/home/home.html'
             })
+            .when('/login', {
+                templateUrl: 'component/login/login.html',
+                controller: 'LoginController'
+            })
             .when('/register', {
                 templateUrl: 'component/register/register.html',
-                controller: "RegisterController"
+                controller: 'RegisterController'
             })
             .otherwise({
                 redirectTo: '/'
