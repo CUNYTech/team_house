@@ -1,6 +1,6 @@
 
 (function() {
-    'user strict';
+    'use strict';
 
     angular
         .module('homeFinder', ['ngRoute'])
