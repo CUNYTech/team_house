@@ -23,6 +23,9 @@
             .when('/profile', {
                 templateUrl: 'profile/profile.html'
             })
+            .when('/forum', {
+                templateUrl: 'component/forum/forum.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });

@@ -6,7 +6,7 @@ const express = require('express'),
     passport = require('passport'),
     Authentication = require('./middleware/authentication'),
     passportService = require('./config/passport'),
-    fourm = require('./models/fourm')(mongoose);
+    forum = require('./models/forum')(mongoose);
 
 router.use(express.static(path.join(__dirname, 'front_end')));
 
@@ -39,11 +39,15 @@ router.get('/user', requireAuth, function(req, res) {
 
 //////////////////////
 router.post('/post', requireAuth, function(req, res) {
-    const post = new fourm.Post({
+    const post = new forum.Post({
         title: req.body.title,
         createdBy: req.user._id,
         imageURL: req.body.imageURL,
-        content: req.body.content
+        content: req.body.content,
+        zipcode: req.body.zipcode,
+        address: req.body.address,
+        rent: req.body.rent,
+        sale: req.body.sale
     });
 
     post.save(function(err, post) {

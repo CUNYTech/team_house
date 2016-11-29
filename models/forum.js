@@ -11,6 +11,20 @@ module.exports = function(mongoose) {
             required: true
         },
         imageURL: String,
+        address:  {
+            type: String,
+            required: true
+        },
+        zipcode:  {
+            type: String,
+            required: true
+        },
+        rent: {
+            type: String,
+        },
+        sale: {
+            type: String,
+        },
         content: {
             type: String,
             required: true
