@@ -60,10 +60,10 @@ router.post('/post', requireAuth, function(req, res) {
 });
 
 router.post('/post/:id', requireAuth, function(req, res) {
-    fourm.Post.findById(req.params.id, function(err, user) {
+    forum.Post.findById(req.params.id, function(err, user) {
         if (err) return err;
 
-        const comment = new fourm.Comment({
+        const comment = new forum.Comment({
             content: req.body.content,
             createdBy: req.user._id
         });
@@ -82,7 +82,7 @@ router.post('/post/:id', requireAuth, function(req, res) {
 });
 
 router.get('/post', requireAuth, function(req, res) {
-    const Post = fourm.Post;
+    const Post = forum.Post;
     Post
         .find()
         .populate('createdBy', 'email fullname')
