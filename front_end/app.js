@@ -10,7 +10,9 @@
     function config($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'component/home/home.html'
+                templateUrl: 'component/home/home.html',
+                controller: 'HomeCtrl',
+                controllerAs: 'vm'
             })
             .when('/login', {
                 templateUrl: 'component/login/login.html',
