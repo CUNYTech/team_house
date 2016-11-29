@@ -6,7 +6,8 @@ const express = require('express'),
     passport = require('passport'),
     Authentication = require('./middleware/authentication'),
     passportService = require('./config/passport'),
-    forum = require('./models/forum')(mongoose);
+    forum = require('./models/forum')(mongoose),
+    User = require('./models/user');
 
 router.use(express.static(path.join(__dirname, 'front_end')));
 
@@ -50,6 +51,7 @@ router.post('/post', requireAuth, function(req, res) {
         sale: req.body.sale
     });
 
+    console.log(post);
     post.save(function(err, post) {
         if (err) {
             return err;

@@ -3,19 +3,22 @@
 
     angular
         .module('homeFinder')
-        .controller('forumCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){ 
+        .controller('ForumCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){ 
             let vm = this;
 
             vm.post = {
                 title: '',
                 imageUrl: '',
-                content: ''
+                content: '',
+                rent: '',
+                sale: '',
+                zipcode: '',
+                address: ''
             };
 
             vm.submit = function() {
-                $http.post('/post', $scope.user)
+                $http.post('/post', vm.post)
                     .success(function(response) {
-                        console.log(response);
                         $location.path('/');
                     })
                     .error(function(error){

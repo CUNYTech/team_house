@@ -24,7 +24,9 @@
                 templateUrl: 'profile/profile.html'
             })
             .when('/forum', {
-                templateUrl: 'component/forum/forum.html'
+                templateUrl: 'component/forum/forum.html',
+                controller: 'ForumCtrl',
+                controllerAs: 'vm'
             })
             .otherwise({
                 redirectTo: '/'
