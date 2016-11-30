@@ -3,15 +3,18 @@
 
     angular
         .module('homeFinder')
-        .controller('HomeCtrl', ['$scope', '$http', 'userPost',function($scope, $http, userPost){ 
+        .controller('HomeCtrl', ['$scope', '$http', 'userPost', 'authToken', function($scope, $http, userPost,authToken){ 
             var vm = this;
 
+            vm.login = authToken.getToken();
             vm.haveInfo = false;
 
-            vm.getInfo = userPost.houseInfo()
-                              .then(function(result){
-                                  vm.haveInfo = true;
-                                  $scope.info = result;
-                              });
+            if (vm.login){
+                vm.getInfo = userPost.houseInfo()
+                                .then(function(result){
+                                    vm.haveInfo = true;
+                                    $scope.info = result;
+                                });
+            }
         }]);
 })();

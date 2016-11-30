@@ -30,6 +30,11 @@
                 controller: 'ForumCtrl',
                 controllerAs: 'vm'
             })
+            .when('/post/:id', {
+                templateUrl: 'component/forum/forum.html',
+                controller: 'ForumCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({
                 redirectTo: '/'
             });
