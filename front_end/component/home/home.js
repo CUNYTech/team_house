@@ -1,18 +1,20 @@
 (function() {
-    'user strict';
+    'use strict';
 
     angular
         .module('homeFinder')
-        .controller('homeCtrl', ['$scope', '$http', function($scope, $http){ 
-            $scope.test = function() {
-                //$http.post('/login', $scope.user).then(successCallBack, errorCallback);
-                $http.get('/user')
-                    .success(function(response) {
-                        console.log(response);
-                    })
-                    .error(function(error) {
-                        console.log(error.error);
-                    });
-            };
+        .controller('HomeCtrl', ['$scope', '$http', 'userPost', 'authToken', function($scope, $http, userPost,authToken){ 
+            var vm = this;
+
+            vm.login = authToken.getToken();
+            vm.haveInfo = false;
+
+            if (vm.login){
+                vm.getInfo = userPost.houseInfo()
+                                .then(function(result){
+                                    vm.haveInfo = true;
+                                    $scope.info = result;
+                                });
+            }
         }]);
 })();

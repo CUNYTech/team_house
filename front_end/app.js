@@ -1,6 +1,6 @@
 
 (function() {
-    'user strict';
+    'use strict';
 
     angular
         .module('homeFinder', ['ngRoute'])
@@ -10,7 +10,9 @@
     function config($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'component/home/home.html'
+                templateUrl: 'component/home/home.html',
+                controller: 'HomeCtrl',
+                controllerAs: 'vm'
             })
             .when('/login', {
                 templateUrl: 'component/login/login.html',
@@ -23,6 +25,16 @@
             .when('/profile', {
                 templateUrl: 'component/profile/profile.html',
                 controller: 'ProfileCtrl'
+            })
+            .when('/forum', {
+                templateUrl: 'component/forum/forum.html',
+                controller: 'ForumCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/post/:id', {
+                templateUrl: 'component/comment/comment.html',
+                controller: 'ForumCtrl',
+                controllerAs: 'vm'
             })
             .otherwise({
                 redirectTo: '/'

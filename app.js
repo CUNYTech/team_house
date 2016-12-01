@@ -17,7 +17,7 @@ catch(e){
     console.log(e);
 }
 
-//mongoose.connect(config.DATABASE);
+// mongoose.connect(config.DATABASE);
 
 // Setting up basic middleware for all Express requests
 app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies

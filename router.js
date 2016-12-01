@@ -6,7 +6,8 @@ const express = require('express'),
     passport = require('passport'),
     Authentication = require('./middleware/authentication'),
     passportService = require('./config/passport'),
-    fourm = require('./models/fourm')(mongoose);
+    forum = require('./models/forum')(mongoose),
+    User = require('./models/user');
 
 router.use(express.static(path.join(__dirname, 'front_end')));
 
@@ -39,13 +40,18 @@ router.get('/user', requireAuth, function(req, res) {
 
 //////////////////////
 router.post('/post', requireAuth, function(req, res) {
-    const post = new fourm.Post({
+    const post = new forum.Post({
         title: req.body.title,
         createdBy: req.user._id,
         imageURL: req.body.imageURL,
-        content: req.body.content
+        content: req.body.content,
+        zipcode: req.body.zipcode,
+        address: req.body.address,
+        rent: req.body.rent,
+        sale: req.body.sale
     });
 
+    console.log(post);
     post.save(function(err, post) {
         if (err) {
             return err;
@@ -56,10 +62,10 @@ router.post('/post', requireAuth, function(req, res) {
 });
 
 router.post('/post/:id', requireAuth, function(req, res) {
-    fourm.Post.findById(req.params.id, function(err, user) {
+    forum.Post.findById(req.params.id, function(err, user) {
         if (err) return err;
 
-        const comment = new fourm.Comment({
+        const comment = new forum.Comment({
             content: req.body.content,
             createdBy: req.user._id
         });
@@ -78,7 +84,7 @@ router.post('/post/:id', requireAuth, function(req, res) {
 });
 
 router.get('/post', requireAuth, function(req, res) {
-    const Post = fourm.Post;
+    const Post = forum.Post;
     Post
         .find()
         .populate('createdBy', 'email fullname')

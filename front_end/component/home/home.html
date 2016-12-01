@@ -1,7 +1,31 @@
 <navbar></navbar>
 
-<div ng-controller="homeCtrl">
-    Home
-    <button ng-click="test()">log profile</button>
+<div ng-show="vm.haveInfo" >
+    <div class="container">
+        <div class="row">
+            <div class="thumbnail col-xs-6 col-md-3" ng-repeat="post in info track by $index">
+                <p>
+                    Title: {{post.title}}
+                </p>
+                <p>
+                    Address: {{post.address}}
+                    Zipcode: {{post.zipcode}}
+                </p>
+                <p>
+                    Sale: {{post.sale}} Rent: {{post.rent}}
+                </p>
+                <img src="{{post.imageURL}}">
+
+                <p>
+                    Content: {{post.content | limitTo : 15}}...
+                </p>
+                <div class="col-md-6 col-md-offset-3">
+                    <a href="/post/{{post._id}}"><button class="btn btn-primary btn-block btn-lg" >Go to Post</button></a>
+                </div>
+            </div>
+            <div ng-repeat-end></div>
+        </div>
+    </div>
 </div>
+
 
