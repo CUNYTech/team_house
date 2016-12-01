@@ -6,7 +6,7 @@ const passport = require('passport'),
       LocalStrategy = require('passport-local');
 
 try{
-    var config = process.env || require('./main') ;
+    var config = require('./main') || process.env;
 }
 catch(e){
     console.log(e);
@@ -35,7 +35,7 @@ const jwtOptions = {
   // Telling Passport where to find the secret
   secretOrKey: config.SECRET
 };
-
+  
 // Setting up JWT login strategy
 const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
   User.findById(payload._id, function(err, user) {
