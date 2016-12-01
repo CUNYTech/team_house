@@ -6,7 +6,7 @@ const passport = require('passport'),
       LocalStrategy = require('passport-local');
 
 try{
-    var config = require('./main') || process.env;
+    var config = process.env || require('./main') ;
 }
 catch(e){
     console.log(e);
