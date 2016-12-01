@@ -7,6 +7,7 @@ try{
     var config = require('../config/main') || process.env;
 }
 catch(e){
+    config = process.env;
     console.log(e);
 }
 
