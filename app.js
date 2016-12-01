@@ -14,6 +14,7 @@ try{
     // mongoose.connect('mongodb://localhost:27017/house2');
 }
 catch(e){
+    config = process.env;
     console.log(e);
 }
 
