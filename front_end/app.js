@@ -32,7 +32,7 @@
             })
             .when('/post/:id', {
                 templateUrl: 'component/comment/comment.html',
-                controller: 'ForumCtrl',
+                controller: 'CommentCtrl',
                 controllerAs: 'vm'
             })
             .otherwise({

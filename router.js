@@ -82,7 +82,7 @@ router.post('/post/:id', requireAuth, function(req, res) {
     });
 });
 
-router.get('/post', requireAuth, function(req, res) {
+router.get('/api/post', requireAuth, function(req, res) {
     const Post = forum.Post;
     Post
         .find()
@@ -102,10 +102,11 @@ router.get('/post', requireAuth, function(req, res) {
         });
 });
 
-router.get('/post:id', requireAuth, function(req, res) {
+router.get('/api/post/:id', requireAuth, function(req, res) {
+    console.log(req.params.id);
     const Post = forum.Post;
     Post
-        .find()
+        .findOne({_id: req.params.id})
         .populate('createdBy', 'email fullname')
         .populate('comments')
         .populate({
@@ -118,6 +119,7 @@ router.get('/post:id', requireAuth, function(req, res) {
         .exec(function(err, Post) {
             if (err) return res.send(err);
 
+            console.log(Post);
             res.json(Post);
         });
 });

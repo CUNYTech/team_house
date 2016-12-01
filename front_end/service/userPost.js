@@ -12,7 +12,16 @@
         let userPost = {
 
             houseInfo: function(){
-                return $http.get('/post')
+                return $http.get('/api/post')
+                            .then(function(response) {
+                                return response.data;
+                            });
+            },
+            commentInfo: function(passID){
+                // console.log(passID);
+                let id = '/api/post/' + passID;
+                // console.log(id);
+                return $http.get(id)
                             .then(function(response) {
                                 return response.data;
                             });
