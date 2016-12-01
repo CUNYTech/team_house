@@ -4,7 +4,7 @@
     angular
         .module('homeFinder')
         .controller('HomeCtrl', ['$scope', '$http', 'userPost', 'authToken', function($scope, $http, userPost,authToken){ 
-            var vm = this;
+            let vm = this;
 
             vm.login = authToken.getToken();
             vm.haveInfo = false;

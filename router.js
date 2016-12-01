@@ -79,7 +79,6 @@ router.post('/post/:id', requireAuth, function(req, res) {
             );
             return res.status(201).send({message: "Comment Post Success"});
         });
-
     });
 });
 
@@ -96,6 +95,26 @@ router.get('/post', requireAuth, function(req, res) {
         //         select: 'email fullname'
         //     }
         // })
+        .exec(function(err, Post) {
+            if (err) return res.send(err);
+
+            res.json(Post);
+        });
+});
+
+router.get('/post:id', requireAuth, function(req, res) {
+    const Post = forum.Post;
+    Post
+        .find()
+        .populate('createdBy', 'email fullname')
+        .populate('comments')
+        .populate({
+            path: 'comments',
+            populate: {
+                path: 'createdBy',
+                select: 'email fullname'
+            }
+        })
         .exec(function(err, Post) {
             if (err) return res.send(err);
 

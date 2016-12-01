@@ -9,7 +9,6 @@
 
     function userPost($http) {
 
-
         let userPost = {
 
             houseInfo: function(){
@@ -18,9 +17,7 @@
                                 return response.data;
                             });
             },
-            
         };
-
         return userPost;
     }
 })();
