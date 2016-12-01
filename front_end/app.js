@@ -21,7 +21,8 @@
                 controller: 'RegisterController'
             })
             .when('/profile', {
-                templateUrl: 'profile/profile.html'
+                templateUrl: 'component/profile/profile.html',
+                controller: 'ProfileCtrl'
             })
             .otherwise({
                 redirectTo: '/'
