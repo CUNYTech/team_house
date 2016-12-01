@@ -1,5 +1,38 @@
 <navbar></navbar>
 
-<div class="container">
-    yh9uhib
+<div class="container" ng-show="vm.haveInfo" ng-submit="vm.submit()">
+    <p>
+        Title: {{commentInfo.title}}
+    </p>
+    <p>
+        {{commentInfo.createdBy.fullname}}
+    </p>
+    <p>
+        Address: {{commentInfo.address}}
+        Zipcode: {{commentInfo.zipcode}}
+    </p>
+    <p>
+        Sale: {{commentInfo.sale}} Rent: {{commentInfo.rent}}
+    </p>
+    <img src="{{commentInfo.imageURL}}">
+    <p>
+        Content: {{commentInfo.content}}
+    </p>
+    <form>
+        <div class="form-group">
+                <label for="content">Comment</label>
+                <textarea class="form-control" rows="5" placeholder="Comment" id="content" ng-model="vm.post.content"></textarea>
+        </div>
+        <div>
+            <button class="btn btn-primary btn-block" type="submit">Submit</button>
+        </div>
+    </form>
+    <div class="container" ng-repeat="x in commentInfo.comments">
+        <p>
+            Name: {{x.createdBy.fullname}}
+        </p>
+        <p>
+            {{x.content}}
+        </p>
+    </div>
 </div>

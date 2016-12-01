@@ -9,14 +9,26 @@
             vm.login = authToken.getToken();
             vm.haveInfo = false;
 
+            vm.post = {
+                content: ''
+            };
+
             if (vm.login){
                 vm.getInfo = userPost.commentInfo($routeParams.id)
                                 .then(function(result){
                                     vm.haveInfo = true;
-                                    // console.log(result, "asdasda");
                                     $scope.commentInfo = result;
-                                    console.log($scope.commentInfo);
+                                    console.log($scope.commentInfo);                                  
                                 });
+                vm.submit = function() {
+                    $http.post('/post/' + $routeParams.id, vm.post)
+                        .success(function(response) {
+                            location.reload();
+                        })
+                        .error(function(error){
+                            console.log(error.error);
+                        });
+                };
             }
         }]);
 })();
