@@ -31,7 +31,7 @@
                 controllerAs: 'vm'
             })
             .when('/post/:id', {
-                templateUrl: 'component/forum/forum.html',
+                templateUrl: 'component/comment/comment.html',
                 controller: 'ForumCtrl',
                 controllerAs: 'vm'
             })

@@ -2,7 +2,7 @@
 
 <div ng-show="vm.haveInfo" >
     <div class="container">
-        <div class="row" >
+        <div class="row">
             <div class="thumbnail col-xs-6 col-md-3" ng-repeat="post in info track by $index">
                 <p>
                     Title: {{post.title}}
@@ -22,6 +22,7 @@
                     <a href="/post/{{post._id}}"><button class="btn btn-primary btn-block btn-lg" >Go to Post</button></a>
                 </div>
             </div>
+            <div ng-repeat-end></div>
         </div>
     </div>
 </div>
