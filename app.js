@@ -11,6 +11,7 @@ const express = require('express'),
 
 try{
     var config = require('./config/main') || process.env;
+    console.log(process.env);
     // mongoose.connect('mongodb://localhost:27017/house2');
 }
 catch(e){
