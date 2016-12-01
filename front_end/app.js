@@ -23,7 +23,8 @@
                 controller: 'RegisterController'
             })
             .when('/profile', {
-                templateUrl: 'profile/profile.html'
+                templateUrl: 'component/profile/profile.html',
+                controller: 'ProfileCtrl'
             })
             .when('/forum', {
                 templateUrl: 'component/forum/forum.html',
