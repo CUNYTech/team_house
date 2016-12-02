@@ -10,10 +10,15 @@
     function navCtrl($scope, $location, $route, authToken) {
         $scope.isAuthenticated = authToken.isAuthenticated();
         $scope.logout = function() {
-
-                authToken.removeToken();
-                $location.path('/');
-                $route.reload();
+            authToken.removeToken();
+            $location.path('/');
+            $route.reload();
+        };
+        $scope.submit = function() {
+            var zipcode = $scope.search;
+            localStorage.setItem("zipcode", zipcode);
+            $location.path('/');
+            $route.reload();
         };
     }
 })();
