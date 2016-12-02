@@ -1,12 +1,36 @@
 <navbar></navbar>
 
-<div>
-  <div>
-    <p>Welcome {{name}}</p>
-  </div>
+<!--
+<div class="container">
+  <div class="row">
+    <h1 class="col-md-4" >Welcome {{name}}! </h1>
+     <div class='btn-toolbar pull-right'>
+                <button class="btn btn-primary btn-small col-md-4 col-sm-2">Edit</button>
+                <button class="btn btn-primary btn-small col-md-4 col-sm-2">Remove</button>
+    </div>
+</div>
+-->
+
+<div class="container">
+    <div class="page-header">
+        <div class="btn-toolbar pull-right">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" >Edit</button>
+                <button type="button" class="btn btn-primary" >Remove</button>
+            </div>
+        </div>
+         <h1>Welcome {{name}}!</h1>
+    </div>
+    
+    <div class="row">
+        <h2>User Posts : </h2>
+        
+    </div>
+    
 </div>
 
 <!--
+
 <h1>Profile Account</h1>
     <tab heading="My Account">
         <i class="fa fa-spin fa-refresh fa-5x" id="loader"></i>
@@ -34,12 +58,13 @@
             </div>
         
     <br>
-        <div class="panel-footer">
+-->
+ <footer>
+    <div class="panel-footer">
             <span class="pull-right">
                 <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
             </span>
-        </div>
-    </tab>
--->
+    </div>
+ </footer>
 
 
