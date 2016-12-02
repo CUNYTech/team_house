@@ -4,20 +4,21 @@
     <div class="container">
         <div class="row">
             <div class="thumbnail col-xs-6 col-md-3" ng-repeat="post in info | orderBy:'timestamps':true">
-                <p>
-                    Title: {{post.title}}
-                </p>
-                <p>
-                    Address: {{post.address}}
-                    Zipcode: {{post.zipcode}}
-                </p>
-                <p>
-                    Sale: {{post.sale}} Rent: {{post.rent}}
-                </p>
                 <img src="{{post.imageURL}}">
                 <p>
-                    Content: {{post.content | limitTo : 15}}...
+                    Sale: ${{post.sale}} Rent: ${{post.rent}}
                 </p>
+                <!--<p>
+                    Title: {{post.title}}
+                </p>-->
+                <p>
+                    {{post.address}} , {{post.zipcode}}
+                    <!--Address: {{post.address}}-->
+                    <!--Zipcode: {{post.zipcode}}-->
+                </p>
+                <!--<p>
+                    Content: {{post.content | limitTo : 15}}...
+                </p>-->
                 <div class="col-md-6 col-md-offset-3">
                     <a href="/post/{{post._id}}"><button class="btn btn-primary btn-block btn-lg" >Go to Post</button></a>
                 </div>

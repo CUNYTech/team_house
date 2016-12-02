@@ -1,23 +1,28 @@
 <navbar></navbar>
 
 <div class="container" ng-show="vm.haveInfo" ng-submit="vm.submit()">
-    <p>
-        Title: {{commentInfo.title}}
-    </p>
-    <p>
-        {{commentInfo.createdBy.fullname}}
-    </p>
-    <p>
-        Address: {{commentInfo.address}}
-        Zipcode: {{commentInfo.zipcode}}
-    </p>
-    <p>
-        Sale: {{commentInfo.sale}} Rent: {{commentInfo.rent}}
-    </p>
-    <img src="{{commentInfo.imageURL}}">
-    <p>
-        Content: {{commentInfo.content}}
-    </p>
+    <div class="col-md-12">
+        <img src="{{commentInfo.imageURL}}">
+    </div>
+    <div class="col-md-4">
+        <h2>
+            {{commentInfo.title}}
+        </h2>
+        <p>
+            {{commentInfo.address}}, {{commentInfo.zipcode}}
+        </p>
+        <p>
+            {{commentInfo.content}}
+        </p>
+    </div>
+    <div class="col-md-4">
+        <p>
+            Sale: ${{commentInfo.sale}} Rent: ${{commentInfo.rent}}
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h3>Contact</h3> {{commentInfo.createdBy.fullname}}
+    </div>
     <form>
         <div class="form-group">
                 <label for="content">Comment</label>
