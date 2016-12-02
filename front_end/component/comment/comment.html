@@ -27,7 +27,7 @@
             <button class="btn btn-primary btn-block" type="submit">Submit</button>
         </div>
     </form>
-    <div class="container" ng-repeat="x in commentInfo.comments">
+    <div class="container" ng-repeat="x in commentInfo.comments | orderBy:'timestamps':true">
         <p>
             Name: {{x.createdBy.fullname}}
         </p>
