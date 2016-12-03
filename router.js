@@ -1,4 +1,5 @@
 "use strict";
+
 const express = require('express'),
     mongoose = require('mongoose'),
     path = require('path'),
@@ -9,7 +10,9 @@ const express = require('express'),
     forum = require('./models/forum')(mongoose),
     User = require('./models/user');
 
+router.use('/node',express.static(path.join(__dirname, 'node_modules')));
 router.use(express.static(path.join(__dirname, 'front_end')));
+
 
 const requireAuth = passport.authenticate('jwt', {
     session: false
