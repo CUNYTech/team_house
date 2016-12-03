@@ -18,8 +18,9 @@
                                 .then(function(result){
                                     vm.haveInfo = true;
                                     $scope.commentInfo = result;
-                                    console.log($scope.commentInfo);                                  
+                                    // console.log($scope.commentInfo);                                  
                                 });
+                                
                 vm.submit = function() {
                     $http.post('/post/' + $routeParams.id, vm.post)
                         .success(function(response) {
