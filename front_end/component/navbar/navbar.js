@@ -14,8 +14,9 @@
             authToken.removeToken();
             $location.path('/');
             $route.reload();
+
         }; 
-        
+
         vm.submit = function() {
             var zipcode = $scope.search;
             localStorage.setItem("zipcode", zipcode);
