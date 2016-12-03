@@ -1,4 +1,4 @@
-<div class="navbar navbar-default" ng-controller="navCtrl" role="navigation">
+<div class="navbar navbar-default" ng-controller="navCtrl as vm" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -8,13 +8,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Home Finder</a>
+            <a class="navbar-brand" href="#" ng-click="vm.home()">Home Finder</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
-                 <div ng-submit="submit()" class="col-xs-12 col-sm-12 col-md-12">
+                 <div ng-submit="vm.submit()" class="col-xs-12 col-sm-12 col-md-12">
                     <form class="navbar-form" role="search">
                         <div class="input-group">
                             <input ng-model="search" type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
@@ -26,10 +26,10 @@
                  </div>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li ng-hide="isAuthenticated"><a href="/login">Login</a></li>
-                <li ng-hide="isAuthenticated"><a href="/register">Register</a></li>
-                <li ng-show="isAuthenticated"><a href="/profile">Profile</a></li>
-                <li ng-show="isAuthenticated"><a href="" ng-click="logout()">Logout</a></li>
+                <li ng-hide="vm.isAuthenticated"><a href="/login">Login</a></li>
+                <li ng-hide="vm.isAuthenticated"><a href="/register">Register</a></li>
+                <li ng-show="vm.isAuthenticated"><a href="/profile">Profile</a></li>
+                <li ng-show="vm.isAuthenticated"><a href="" ng-click="vm.logout()">Logout</a></li>
 
                 <li><a href="/forum">Post</a></li>
             </ul>

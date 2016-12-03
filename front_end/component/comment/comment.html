@@ -23,6 +23,16 @@
     <div class="col-md-4">
         <h3>Contact</h3> {{commentInfo.createdBy.fullname}}
     </div>
+
+    <div class="container" ng-repeat="x in commentInfo.comments | orderBy:'timestamps':true">
+        <p>
+            Name: {{x.createdBy.fullname}}
+        </p>
+        <p>
+            {{x.content}}
+        </p>
+    </div>
+
     <form>
         <div class="form-group">
                 <label for="content">Comment</label>
@@ -32,12 +42,4 @@
             <button class="btn btn-primary btn-block" type="submit">Submit</button>
         </div>
     </form>
-    <div class="container" ng-repeat="x in commentInfo.comments | orderBy:'timestamps':true">
-        <p>
-            Name: {{x.createdBy.fullname}}
-        </p>
-        <p>
-            {{x.content}}
-        </p>
-    </div>
 </div>
