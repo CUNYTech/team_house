@@ -20,6 +20,7 @@
                                     $scope.commentInfo = result;
                                     // console.log($scope.commentInfo);                                  
                                 });
+                                
                 vm.submit = function() {
                     $http.post('/post/' + $routeParams.id, vm.post)
                         .success(function(response) {
