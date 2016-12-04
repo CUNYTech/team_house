@@ -14,17 +14,27 @@
 <div class="container">
     <div class="page-header">
         <div class="btn-toolbar pull-right">
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary" >Edit</button>
-                <button type="button" class="btn btn-primary" >Remove</button>
-            </div>
+                <button type="button" class="btn btn-primary" >Edit Profile</button>
+                <!--<button type="button" class="btn btn-primary" id="profileRemButton">Remove</button>-->
         </div>
          <h1>Welcome {{name}}!</h1>
     </div>
     
-    <div class="row">
-        <h2>User Posts : </h2>
-        
+    <div class="container">
+        <h2>Your Posts</h2>
+         <div class="thumbnail col-xs-6 col-md-3" ng-repeat="post in info | orderBy:'timestamps':true">
+                <img src="{{post.imageURL}}">
+                <p>
+                    Sale: ${{post.sale}} Rent: ${{post.rent}}
+                </p>
+                <p>
+                    {{post.address}} , {{post.zipcode}}
+                </p>
+                <div class="col-md-6 col-md-offset-3">
+                    <a href="/post/{{post._id}}"><button class="btn btn-primary btn-block btn-lg" >Go to Post</button></a>
+                </div>
+            </div>
+            <div ng-repeat-end></div>
     </div>
     
 </div>
@@ -59,12 +69,12 @@
         
     <br>
 -->
- <footer>
+ <!--<footer>
     <div class="panel-footer">
             <span class="pull-right">
                 <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
             </span>
     </div>
- </footer>
+ </footer>-->
 
 

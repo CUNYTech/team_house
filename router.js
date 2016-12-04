@@ -35,6 +35,7 @@ router.post('/login', requireLogin, Authentication.login);
 ////////////////////
 router.get('/user', requireAuth, function(req, res) {
     let user = {
+        id: req.user._id,
         email: req.user.email,
         fullname: req.user.fullname
     };
