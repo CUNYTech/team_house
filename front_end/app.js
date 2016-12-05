@@ -36,6 +36,11 @@
                 controller: 'CommentCtrl',
                 controllerAs: 'vm'
             })
+            .when('/put/:id', {
+                templateUrl: 'component/register/register.html',
+                controller: 'EditProfileCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({
                 redirectTo: '/'
             });

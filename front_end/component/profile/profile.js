@@ -10,6 +10,7 @@
                         //console.log(response);
                         user = response;
                         $scope.name = user.fullname;
+                        $scope.id = user.id;
                     })
                     .error(function(error) {
                         console.log(error.error);

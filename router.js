@@ -128,6 +128,25 @@ router.get('/api/post/:id', requireAuth, function(req, res) {
         });
 });
 
+router.put('/put/:id', requireAuth, function(req, res) {
+    var fullname = req.body.fullname;
+    var email = req.body.email;
+    console.log(req.user._id);
+    User.findById(req.user._id, function(err, userData){
+        var user = userData;
+        user.fullname = fullname;
+        user.email = email;
+
+        user.save(function(err){
+            if(err){
+                console.log("fail " + err);
+            } else {
+                console.log("Success")
+            }
+        })
+    });
+});
+
 router.use('*', function(req, res) {
     let index = path.resolve(__dirname, 'front_end/index.html');
     res.sendFile(index);
