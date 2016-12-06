@@ -171,6 +171,24 @@ router.get('/public/post/:id', function(req, res) {
         });
 });
 
+router.put('/put/:id', requireAuth, function(req, res) {
+    var fullname = req.body.fullname;
+    var email = req.body.email;
+    console.log(req.user._id);
+    User.findById(req.user._id, function(err, userData){
+        var user = userData;
+        user.fullname = fullname;
+        user.email = email;
+
+        user.save(function(err){
+            if(err){
+                return err;
+            } else {
+                return res.status(201).send({message: "Profile Success"});
+            }
+        })
+    });
+});
 
 router.use('*', function(req, res) {
     let index = path.resolve(__dirname, 'front_end/index.html');

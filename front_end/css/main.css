@@ -10,6 +10,13 @@
   .jumbotron-text {  
     text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
   }
+
+  .pagecount {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    text-align: center;
+   }
 /*Home Page*/
 
 /*Profile Page*/
@@ -17,3 +24,9 @@
       background-color: red;
   }
 /*Profile Page*/
+
+/*CSS for Profile Page*/
+#profileRemButton {
+    background-color: red;
+}
+

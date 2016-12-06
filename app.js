@@ -15,7 +15,6 @@ try{
 }
 catch(e){
     config = process.env;
-    console.log(e);
 }
 
 //mongoose.connect(config.DATABASE);
