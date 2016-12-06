@@ -1,16 +1,5 @@
 <navbar></navbar>
 
-<!--
-<div class="container">
-  <div class="row">
-    <h1 class="col-md-4" >Welcome {{name}}! </h1>
-     <div class='btn-toolbar pull-right'>
-                <button class="btn btn-primary btn-small col-md-4 col-sm-2">Edit</button>
-                <button class="btn btn-primary btn-small col-md-4 col-sm-2">Remove</button>
-    </div>
-</div>
--->
-
 <div class="container">
     <div class="page-header">
         <div class="btn-toolbar pull-right">
@@ -22,59 +11,26 @@
     
     <div class="container">
         <h2>Your Posts</h2>
-         <div class="thumbnail col-xs-6 col-md-3" ng-repeat="post in info | orderBy:'timestamps':true">
-                <img src="{{post.imageURL}}">
-                <p>
-                    Sale: ${{post.sale}} Rent: ${{post.rent}}
-                </p>
-                <p>
-                    {{post.address}} , {{post.zipcode}}
-                </p>
-                <div class="col-md-6 col-md-offset-3">
-                    <a href="/post/{{post._id}}"><button class="btn btn-primary btn-block btn-lg" >Go to Post</button></a>
-                </div>
-            </div>
+        <div class="thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3" style="background:url({{post.imageURL}}) no-repeat center;" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">
+              
+               <!-- Edit Button -->
+               <a href=/post/{{post._id}} type="button" class="btn btn-primary pull-right">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+
+               <a href="/post/{{post._id}}">
+                   <div  class="thumb">
+                       <!--<img class= "thumbnail" class="img-responsive" src="{{post.imageURL}}"> -->
+                       <p>
+                           Sale: ${{post.sale}} Rent: ${{post.rent}}
+                           <br>
+                           {{post.address}} , {{post.zipcode}}
+                       </p>
+                   </div>
+               </a>
+           </div>
             <div ng-repeat-end></div>
     </div>
     
 </div>
-
-<!--
-
-<h1>Profile Account</h1>
-    <tab heading="My Account">
-        <i class="fa fa-spin fa-refresh fa-5x" id="loader"></i>
-        <div class="container">
-            <div class="panel panel-info">
-                
-                <div class="row"><div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
-    ngf-accept="'image/*'" >Profile Picture</div>
-                </div>
-            
-            </div>
-            
-            
-            <div class=" col-md-9 col-sm-offset-2 ">
-                <div class="row">
-                    <input class="form-control" ng-model="user.username">
-                    <text ng-model="user.username"></text>
-                    
-                <br>
-                    <input class="form-control" ng-model="user.email" href="mailto:info@support.com">
-                <br>
-                    <textarea class="form-control" ng-model="user.aboutuser"></textarea>
-                </div>        
-                </div>
-            </div>
-        
-    <br>
--->
- <!--<footer>
-    <div class="panel-footer">
-            <span class="pull-right">
-                <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
-            </span>
-    </div>
- </footer>-->
-
 
