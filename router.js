@@ -139,9 +139,9 @@ router.put('/put/:id', requireAuth, function(req, res) {
 
         user.save(function(err){
             if(err){
-                console.log("fail " + err);
+                return err;
             } else {
-                console.log("Success")
+                return res.status(201).send({message: "Profile Success"});
             }
         })
     });

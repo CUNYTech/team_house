@@ -10,7 +10,7 @@
             vm.haveInfo = false;
 
 
-            if(vm.login && localStorage.getItem("zipcode") != null && localStorage.getItem("zipcode") != 'undefined'){
+            if(vm.login && localStorage.getItem("zipcode") !== null && localStorage.getItem("zipcode") !== 'undefined'){
                 vm.getInfo = userPost.houseInfo()
                                 .then(function(result){
                                     vm.haveInfo = true;
@@ -21,7 +21,7 @@
                                     $scope.pageSize = 5;
                                     $scope.numberOfPages=function(){
                                         return Math.ceil($scope.info.length/$scope.pageSize);                
-                                    }
+                                    };
                                 });
             }
 
@@ -35,7 +35,7 @@
                                     $scope.pageSize = 5;
                                     $scope.numberOfPages=function(){
                                         return Math.ceil($scope.info.length/$scope.pageSize);                
-                                    }
+                                    };
                                 });
             }
         }])
@@ -44,6 +44,6 @@
                 if (!input || !input.length) { return; }
                 start = +start; //parse to int
                 return input.slice(start);
-            }
+            };
         });
 })();

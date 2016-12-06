@@ -3,7 +3,7 @@
 
     angular
         .module('homeFinder')
-        .controller('CommentCtrl', ['$scope', '$http', 'userPost', 'authToken', "$routeParams", function($scope, $http, userPost,authToken, $routeParams){ 
+        .controller('CommentCtrl', ['$scope', '$http', 'userPost', 'authToken', "$routeParams", '$route', function($scope, $http, userPost,authToken, $routeParams, $route){ 
             let vm = this;
 
             vm.login = authToken.getToken();
@@ -20,11 +20,12 @@
                                     $scope.commentInfo = result;
                                     // console.log($scope.commentInfo);                                  
                                 });
-                                
+                                // $location.path('/');
+            // $route.reload();
                 vm.submit = function() {
                     $http.post('/post/' + $routeParams.id, vm.post)
                         .success(function(response) {
-                            location.reload();
+                            $route.reload();
                         })
                         .error(function(error){
                             console.log(error.error);
