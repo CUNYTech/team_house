@@ -34,9 +34,9 @@
     left: 0;
     text-align: center;
     margin: 0 auto;
-    text-shadow: 1px 1px #000;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
     text-align: center;
-    color: white;
+    color: lightgray;
     font-size: 20px;
   }
    /*img.thumbnail{

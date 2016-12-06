@@ -15,9 +15,9 @@
 <!--<div>-->
 
 <div ng-show="vm.haveInfo" >
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-              <div class="container thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3" style="background:url({{post.imageURL}}) no-repeat center;" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">
+            <div class="container thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3" style="background:url({{post.imageURL}}) no-repeat center;" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">
                <!--<div class="thumbnail col-xs-6 col-md-3" style="background:url({{post.imageURL}}) no-repeat center ; background-size:250px 250px; height:250px; width:250px;" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">-->
                <a href="/post/{{post._id}}">
                    <div  class="thumb">
@@ -28,9 +28,9 @@
                            {{post.address}} , {{post.zipcode}}
                        </p>
                    </div>
-               </a>
-           </div>
-                <div ng-repeat-end></div>
+                </a>
+            </div>
+            <div ng-repeat-end></div>
         </div>
         <div class="pagecount">
             <button class="btn" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
