@@ -10,15 +10,14 @@ const express = require('express'),
 // Database Setup
 
 try{
-    var config = process.env;
+    var config = require('./config/main');
     // mongoose.connect('mongodb://localhost:27017/house2');
 }
 catch(e){
-    // config = ;
-    console.log(e);
+    config = process.env;
 }
 
-//mongoose.connect(config.DATABASE);
+mongoose.connect(config.DATABASE);
 
 // Setting up basic middleware for all Express requests
 app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies

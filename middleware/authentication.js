@@ -4,11 +4,10 @@ const jwt = require('jsonwebtoken'),
       User = require('../models/user');
 
 try{
-    var config = process.env;
+    var config = require('../config/main');
 }
 catch(e){
-    // config = process.env;
-    console.log(e);
+    config = process.env;
 }
 
 // Generate JWT
