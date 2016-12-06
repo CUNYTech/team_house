@@ -190,6 +190,10 @@ router.put('/put/:id', requireAuth, function(req, res) {
     });
 });
 
+router.put('/put/:postid', requireAuth, function(req, res) {
+    console.log("Here");
+});
+
 router.use('*', function(req, res) {
     let index = path.resolve(__dirname, 'front_end/index.html');
     res.sendFile(index);

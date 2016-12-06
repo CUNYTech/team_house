@@ -41,6 +41,11 @@
                 controller: 'EditProfileCtrl',
                 controllerAs: 'vm'
             })
+            .when('/put/:postid', {
+                templateUrl: 'component/forum/forum.html',
+                controller: 'EditPostCtrl',
+                controllerAs: 'vm'
+            })
             .when('/search', {
                 templateUrl: 'component/search/search.html',
                 controller: 'SearchCtrl',
