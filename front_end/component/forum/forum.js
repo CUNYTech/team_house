@@ -5,6 +5,7 @@
         .module('homeFinder')
         .controller('ForumCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){ 
             let vm = this;
+            vm.editing = false;
 
             vm.post = {
                 title: '',

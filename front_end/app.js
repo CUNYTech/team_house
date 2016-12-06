@@ -41,9 +41,9 @@
                 controller: 'EditProfileCtrl',
                 controllerAs: 'vm'
             })
-            .when('/put/:postid', {
+            .when('/put/post/:id', {
                 templateUrl: 'component/forum/forum.html',
-                controller: 'EditPostCtrl',
+                controller: 'EditForumCtrl',
                 controllerAs: 'vm'
             })
             .when('/search', {

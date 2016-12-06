@@ -32,11 +32,11 @@
         </div>
 
         <div class="col-md-6 col-md-offset-3">
-            <button class="btn btn-primary btn-block btn-lg" type="submit">Submit</button>
+            <button class="btn btn-primary btn-block btn-lg" ng-hide="vm.editing" type="submit">Submit</button>
         </div>
 
         <div class="col-md-6 col-md-offset-3">
-            <button class="btn btn-primary btn-block btn-lg" type="submit">Submit</button>
+            <button class="btn btn-primary btn-block btn-lg" ng-show="vm.editing" type="submit">Edit</button>
         </div>
     </form>
 </div>

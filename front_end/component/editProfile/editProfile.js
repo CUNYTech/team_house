@@ -24,7 +24,6 @@
                 $scope.editProfile = function() {
                     $http.put('/put/' + $routeParams.id, $scope.user)
                         .success(function(response) {
-                            console.log("asda");
                             $location.path('/profile');
                         })
                         .error(function(error){

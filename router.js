@@ -190,8 +190,28 @@ router.put('/put/:id', requireAuth, function(req, res) {
     });
 });
 
-router.put('/put/:postid', requireAuth, function(req, res) {
-    console.log("Here");
+router.put('/put/post/:id', requireAuth, function(req, res) {
+    var Post = forum.post;
+    forum.Post.findById(req.params.id, function(err, postData) {
+        if (err) return err;
+
+        var post = postData;
+        post.title = req.body.title;
+        post.imageURL = req.body.imageURL;
+        post.content = req.body.content;
+        post.zipcode = req.body.zipcode;
+        post.address = req.body.address;
+        post.rent = req.body.rent;
+        post.sale = req.body.sale;
+
+        post.save(function(err){
+            if(err){
+                return errl
+            } else {
+                return res.status(201).send({message: "Post Success"});
+            }
+        })
+    });
 });
 
 router.use('*', function(req, res) {
