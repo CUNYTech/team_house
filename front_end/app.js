@@ -41,6 +41,11 @@
                 controller: 'EditProfileCtrl',
                 controllerAs: 'vm'
             })
+            .when('/search', {
+                templateUrl: 'component/search/search.html',
+                controller: 'SearchCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({
                 redirectTo: '/'
             });

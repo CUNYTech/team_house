@@ -8,7 +8,7 @@
     <div class="container">
         <h1 class="jumbotron-text">Home Finder</h1>
         <p class="jumbotron-text">Find Your Dream Home Today</p>
-        <p><a href="#" class="btn btn-primary btn-large">See All Listings</a>
+        <p><a href="/search" class="btn btn-primary btn-large">See All Listings</a>
         </p>
     </div>
 </div>
@@ -17,20 +17,19 @@
 <div ng-show="vm.haveInfo" >
     <div class="container">
         <div class="row">
-                <div class="container thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">
-                    <!--<div class="thumbnail col-xs-6 col-md-3" style="background:url({{post.imageURL}}) no-repeat center ; background-size:250px 250px; height:250px; width:250px;" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">-->
-                    <a href="/post/{{post._id}}">
-                        <div  class="thumb" style="background:url({{post.imageURL}}); ">
-<!--
-                            <img class= "thumbnail" class="img-responsive" src="{{post.imageURL}}"> -->
-                            <p>
-                                Sale: ${{post.sale}} Rent: ${{post.rent}}
-                                <br>
-                                {{post.address}} , {{post.zipcode}}
-                            </p>
-                        </div>
-                    </a>
-                    </div>
+              <div class="container thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3" style="background:url({{post.imageURL}}) no-repeat center;" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">
+               <!--<div class="thumbnail col-xs-6 col-md-3" style="background:url({{post.imageURL}}) no-repeat center ; background-size:250px 250px; height:250px; width:250px;" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">-->
+               <a href="/post/{{post._id}}">
+                   <div  class="thumb">
+                       <!--<img class= "thumbnail" class="img-responsive" src="{{post.imageURL}}"> -->
+                       <p>
+                           Sale: ${{post.sale}} Rent: ${{post.rent}}
+                           <br>
+                           {{post.address}} , {{post.zipcode}}
+                       </p>
+                   </div>
+               </a>
+           </div>
                 <div ng-repeat-end></div>
         </div>
         <div class="pagecount">
