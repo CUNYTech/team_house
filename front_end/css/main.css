@@ -23,7 +23,7 @@
    }
 
    .thumb{
-     height:250px; 
+     height:240px;
    }
 
    .thumb p{
@@ -36,6 +36,7 @@
     text-shadow: 1px 1px #000;
     text-align: center;
     color: white;
+    font-size: 20px;
   }
    /*img.thumbnail{
     position: relative; 
