@@ -19,9 +19,24 @@
    }
 
    .thumbnail{
-     height:250px; 
-     width:250px;
+     height:250px;
    }
+
+   .thumb{
+     height:250px; 
+   }
+
+   .thumb p{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    margin: 0 auto;
+    text-shadow: 1px 1px #000;
+    text-align: center;
+    color: white;
+  }
    /*img.thumbnail{
     position: relative; 
    }
