@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken'),
       User = require('../models/user');
 
 try{
-    var config = require('../config/main') || process.env;
+    var config = require('../config/main');
 }
 catch(e){
     config = process.env;
