@@ -10,10 +10,11 @@ const express = require('express'),
 // Database Setup
 
 try{
-    var config = require('./config/main') || process.env;
+    var config = process.env || require('./config/main');
     // mongoose.connect('mongodb://localhost:27017/house2');
 }
 catch(e){
+    config = process.env;
     console.log(e);
 }
 
