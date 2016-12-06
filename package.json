@@ -2,7 +2,7 @@
   "name": "team_house",
   "version": "0.0.0",
   "engines": {
-    "node": "7.2.0"
+    "node": "7.0.0"
   },
   "scripts": {
     "start": "node app.js"
