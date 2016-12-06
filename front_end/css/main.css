@@ -1,4 +1,19 @@
-/*CSS for Profile Page*/
-#profileRemButton {
-    background-color: red;
-}
+/*Home Page*/
+  .jumbotron {
+    /*/height: 500px;*/
+    color: lightgrey;
+    background: url("assets/naturehouse.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100%;
+  }
+
+  .jumbotron-text {  
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  }
+/*Home Page*/
+
+/*Profile Page*/
+  #profileRemButton {
+      background-color: red;
+  }
+/*Profile Page*/

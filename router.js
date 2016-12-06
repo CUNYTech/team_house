@@ -106,6 +106,7 @@ router.get('/api/post', requireAuth, function(req, res) {
         });
 });
 
+
 router.get('/api/post/:id', requireAuth, function(req, res) {
     console.log(req.params.id);
     const Post = forum.Post;
@@ -127,6 +128,49 @@ router.get('/api/post/:id', requireAuth, function(req, res) {
             res.json(Post);
         });
 });
+
+router.get('/public/post', function(req, res) {
+    const Post = forum.Post;
+    Post
+        .find()
+        .populate('createdBy', 'email fullname')
+        .populate('comments')
+        // .populate({
+        //     path: 'comments',
+        //     populate: {
+        //         path: 'createdBy',
+        //         select: 'email fullname'
+        //     }
+        // })
+        .exec(function(err, Post) {
+            if (err) return res.send(err);
+
+            res.json(Post);
+        });
+});
+
+router.get('/public/post/:id', function(req, res) {
+    console.log(req.params.id);
+    const Post = forum.Post;
+    Post
+        .findOne({_id: req.params.id})
+        .populate('createdBy', 'email fullname')
+        .populate('comments')
+        .populate({
+            path: 'comments',
+            populate: {
+                path: 'createdBy',
+                select: 'email fullname'
+            }
+        })
+        .exec(function(err, Post) {
+            if (err) return res.send(err);
+
+            console.log(Post);
+            res.json(Post);
+        });
+});
+
 
 router.use('*', function(req, res) {
     let index = path.resolve(__dirname, 'front_end/index.html');
