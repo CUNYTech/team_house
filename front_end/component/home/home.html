@@ -13,27 +13,33 @@
 <div ng-show="vm.haveInfo" >
     <div class="container">
         <div class="row">
-            <div class="thumbnail col-xs-6 col-md-3" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">
-                <img src="{{post.imageURL}}">
-                <p>
-                    Sale: ${{post.sale}} Rent: ${{post.rent}}
-                </p>
-                <!--<p>
-                    Title: {{post.title}}
-                </p>-->
-                <p>
-                    {{post.address}} , {{post.zipcode}}
-                    <!--Address: {{post.address}}-->
-                    <!--Zipcode: {{post.zipcode}}-->
-                </p>
-                <!--<p>
-                    Content: {{post.content | limitTo : 15}}...
-                </p>-->
-                <div class="col-md-6 col-md-offset-3">
-                    <a href="/post/{{post._id}}"><button class="btn btn-primary btn-block btn-lg" >Go to Post</button></a>
-                </div>
-            </div>
-            <div ng-repeat-end></div>
+                <div ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">
+                    <!--<div class="thumbnail col-xs-6 col-md-3" style="background:url({{post.imageURL}}) no-repeat center ; background-size:250px 250px; height:250px; width:250px;" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">-->
+                    <a  href="/post/{{post._id}}">
+                        <div class="thumbnail col-xs-6 col-md-3" style="background:url({{post.imageURL}}) no-repeat center; background-size:250px 250px;">
+<!--
+                            <img class= "thumbnail" class="img-responsive" src="{{post.imageURL}}"> -->
+                            <p>
+                                Sale: ${{post.sale}} Rent: ${{post.rent}}
+                            </p>
+                            <!--<p>
+                                Title: {{post.title}}
+                            </p>-->
+                            <p>
+                                {{post.address}} , {{post.zipcode}}
+                                <!--Address: {{post.address}}-->
+                                <!--Zipcode: {{post.zipcode}}-->
+                            </p>
+                            <!--<p>
+                                Content: {{post.content | limitTo : 15}}...
+                            </p>-->
+                            <!--<div class="col-md-6 col-md-offset-3">
+                                <a href="/post/{{post._id}}"><button class="btn btn-primary btn-block btn-lg" >Go to Post</button></a>
+                            </div>-->
+                        </div>
+                    </a>
+                    </div>
+                <div ng-repeat-end></div>
         </div>
         <div class="pagecount">
             <button class="btn" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">

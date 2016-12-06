@@ -17,6 +17,19 @@
     padding: 10px;
     text-align: center;
    }
+
+   .thumbnail{
+     height:250px; 
+     width:250px;
+   }
+   /*img.thumbnail{
+    position: relative; 
+   }
+
+   p.thumbnail{
+     position: absolute; 
+     top: 50px; 
+   }*/
 /*Home Page*/
 
 /*Profile Page*/
