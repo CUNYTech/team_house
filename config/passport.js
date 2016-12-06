@@ -6,10 +6,10 @@ const passport = require('passport'),
       LocalStrategy = require('passport-local');
 
 try{
-    var config = require('./main');
+    var config = process.env;
 }
 catch(e){
-    config = process.env;
+    // config = process.env;
     console.log(e);
 }
 
