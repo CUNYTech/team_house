@@ -1,15 +1,14 @@
 (function() {
     'use strict';
 
-    $(document).ready(function() {
-  $('[data-toggle=offcanvas]').click(function() {
-    $('.row-offcanvas').toggleClass('active');
-  });
-});
-
     angular
         .module('homeFinder')
         .controller('SearchCtrl', ['$scope', '$http', '$filter', 'userPost', 'publicPost', 'authToken', function($scope, $http, $filter, userPost, publicPost,authToken){ 
+            $("#sidebar-toggle").click(function(e) {
+                $('#search-wrapper').toggleClass('toggleSidebar');
+             });
+
+            
             let vm = this;
 
             //vm.login = authToken.getToken();

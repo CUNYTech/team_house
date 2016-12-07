@@ -1,3 +1,7 @@
+.navbar{
+   margin-bottom: 0;
+}
+
 /*Home Page*/
   .jumbotron {
     /*/height: 500px;*/
@@ -50,39 +54,48 @@
 /*Home Page*/
 
 /*Sidebar on Search Page*/
-#sidebar {
-  width: inherit;
-  min-width: 220px;
-  max-width: 220px;
-  background-color:#f5f5f5;
-  margin:auto;
-  /*float: left;*/
-  height:100%;
+
+#sidebar-wrapper {
+  z-index: 1s;
+  position: absolute;
+  width : 200px;
+  height: 75%;
+  overflow-y:hidden;
+  background-color: #f5f5f5;
+}
+#sidebar-toggle{
   position:absolute;
-  display:block;
+  padding-left:14px;
+  padding-top:25px;
+  visibility: hidden;
+}
+#search-content{
+  width:100%;
+  padding-left:215px;
+  position: absolute;
 }
 
-@media screen and (max-width: 768px) {
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-    width:calc(100% + 220px);
-  }
-    
-  .row-offcanvas-left
-  {
-    left: -220px;
+@media (max-width: 660px) {
+  #sidebar-wrapper  {
+    width:0px
   }
 
-  .row-offcanvas-left.active {
-    left: 0;
+  #sidebar-toggle{
+    position:relative; /*Moves the search content down*/
+    visibility: visible;
   }
-
-  .sidebar-offcanvas {
-    position: absolute;
-    top: 0;
+  #search-content {
+    padding:25px;
   }
 }
 
+#search-wrapper.toggleSidebar #sidebar-wrapper {
+   width:160px;
+}
+
+#search-wrapper.toggleSidebar #search-content{
+   padding-left:175px;
+}
+#search-wrapper.toggleSidebar #sidebar-toggle{
+   padding-left:175px;
+} 

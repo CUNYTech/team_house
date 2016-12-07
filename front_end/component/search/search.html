@@ -1,30 +1,28 @@
 <navbar></navbar>
 
-<div ng-show="vm.haveInfo" >
-    <!--<div id="sidebar" class="sidebar-offcanvas">
-            <div class="col-xs-0 col-sm-2 col-md-3 col-lg-3">
-                <h3>Sidebar (fixed)</h3>
-                <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#">Section</a></li>
-                <li><a href="#">Section</a></li>
-                <li><a href="#">Section</a></li>
-                <li><a href="#">Section</a></li>
-                <li><a href="#">Section</a></li>
-                <li><a href="#">Section</a></li>
-                <li><a href="#">Section</a></li>
-                <li><a href="#">Section</a></li>
-                <li><a href="#">Section</a></li>
-                <li><a href="#">Section</a></li>
-                </ul>
-            </div>
-        </div>-->
-    <div class="search-body container">
+<div id="search-wrapper">
+<!--<div ng-show="vm.haveInfo" >-->
+    <div id="sidebar-wrapper">
+        <h3>Refine by</h3>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#">Section</a></li>
+            <li><a href="#">Section</a></li>
+            <li><a href="#">Section</a></li>
+            <li><a href="#">Section</a></li>
+            <li><a href="#">Section</a></li>
+        </ul>
+    </div>
+
+    <div id="sidebar-toggle">
+        <button id="search-toggle-button" class="btn btn-lg glyphicon glyphicon-th-list"></button>
+    </div>
+
+    <div id="search-content"class="container-fluid">
         <div class="row">
-                <div class="container thumbnail col-xs-12 col-sm-5 col-md-3 col-lg-3" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">
-                    <!--<div class="thumbnail col-xs-6 col-md-3" style="background:url({{post.imageURL}}) no-repeat center ; background-size:250px 250px; height:250px; width:250px;" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">-->
+                <div class="thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">
                     <a href="/post/{{post._id}}">
                         <div  class="thumb" style="background:url({{post.imageURL}}) no-repeat center;">
-<!--
+    <!--
                             <img class= "thumbnail" class="img-responsive" src="{{post.imageURL}}"> -->
                             <p>
                                 Sale: ${{post.sale}} Rent: ${{post.rent}}
@@ -47,5 +45,6 @@
         </div>
     </div>
 </div>
+<!--</div>-->
 
 
