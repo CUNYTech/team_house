@@ -35,7 +35,6 @@
             else{
                 vm.getInfo = publicPost.commentInfo($routeParams.id)
                                 .then(function(result){
-                                    vm.haveInfo = true;
                                     $scope.commentInfo = result;
                                     // console.log($scope.commentInfo);                                  
                                 });
