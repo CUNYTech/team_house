@@ -4,6 +4,7 @@
     angular
         .module('homeFinder')
         .controller('SearchCtrl', ['$scope', '$http', '$filter', 'userPost', 'publicPost', 'authToken', function($scope, $http, $filter, userPost, publicPost,authToken){ 
+            //Changes CSS when sidebar-toggle button is clicked
             $("#sidebar-toggle").click(function(e) {
                 $('#search-wrapper').toggleClass('toggleSidebar');
              });

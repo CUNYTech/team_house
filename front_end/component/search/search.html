@@ -3,9 +3,17 @@
 <div id="search-wrapper">
 <!--<div ng-show="vm.haveInfo" >-->
     <div id="sidebar-wrapper">
-        <h3>Refine by</h3>
-        <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#">Section</a></li>
+        <h4 style="color:gray" >Refine by</h4>
+        <ul id= "sidebar-elements" class="nav nav-pills nav-stacked">
+            <li>
+                    <h4>Price</h4>  
+                    <div id="sidebar-price">
+                        <form class="form-inline" >    
+                            $<input class="form-control" type="text">to $<input  class="form-control" type="text">
+                        </form>
+                         <button class="btn">Custom Price</button> 
+                     </div>
+            </li>
             <li><a href="#">Section</a></li>
             <li><a href="#">Section</a></li>
             <li><a href="#">Section</a></li>

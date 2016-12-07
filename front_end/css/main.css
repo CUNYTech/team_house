@@ -56,13 +56,35 @@
 /*Sidebar on Search Page*/
 
 #sidebar-wrapper {
-  z-index: 1s;
+  z-index: 1;
   position: absolute;
   width : 200px;
   height: 75%;
   overflow-y:hidden;
   background-color: #f5f5f5;
 }
+
+#sidebar-wrapper h4{
+  text-indent:20px;
+}
+
+
+#sidebar-wrapper li{
+  text-indent:20px;
+}
+#sidebar-price{
+  text-indent:0px;
+}
+#sidebar-price button{
+  left:85px;
+  position:relative;
+  margin-top:5px;
+}
+
+#sidebar-price input{
+  width: 80px;
+}
+
 #sidebar-toggle{
   position:absolute;
   padding-left:14px;
@@ -90,12 +112,12 @@
 }
 
 #search-wrapper.toggleSidebar #sidebar-wrapper {
-   width:160px;
+   width:200px;
 }
 
 #search-wrapper.toggleSidebar #search-content{
-   padding-left:175px;
+   padding-left:215px;
 }
 #search-wrapper.toggleSidebar #sidebar-toggle{
-   padding-left:175px;
+   padding-left:215px;
 } 
