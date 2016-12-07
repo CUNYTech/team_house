@@ -1,6 +1,5 @@
 <navbar></navbar>
-
-<div class="container" ng-show="vm.haveInfo" ng-submit="vm.submit()">
+<div class="container" ng-submit="vm.submit()">
     <div class="row">
         <div class="col-md-4">
             <img src="{{commentInfo.imageURL}}"style="width:300px;height:300px;">
@@ -34,7 +33,7 @@
                     <textarea class="form-control" rows="5" placeholder="Comment" id="content" ng-model="vm.post.content"></textarea>
             </div>
             <div>
-                <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                <button class="btn btn-primary btn-block" type="submit" ng-disabled="!vm.haveInfo">Submit</button>
             </div>
         </form>
     </div>
