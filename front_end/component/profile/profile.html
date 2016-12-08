@@ -6,31 +6,30 @@
                 <a href="/put/{{id}}"><button type="button" class="btn btn-primary">Edit Profile</button></a>
                 <!--<button type="button" class="btn btn-primary" id="profileRemButton">Remove</button>-->
         </div>
-         <h1>Welcome {{name}}!</h1>
+         <h1>Welcome Home, {{name}}!</h1>
     </div>
-    
-    <div class="container">
-        <h2>Your Posts</h2>
-        <div class="thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3" style="background:url({{post.imageURL}}) no-repeat center;" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">
-              
-               <!-- Edit Button -->
-               <a href=/put/post/{{post._id}} type="button" class="btn btn-primary pull-right">
-                    <span class="glyphicon glyphicon-pencil"></span>
-                </a>
 
-               <a href="/post/{{post._id}}">
-                   <div  class="thumb">
-                       <!--<img class= "thumbnail" class="img-responsive" src="{{post.imageURL}}"> -->
-                       <p>
-                           Sale: ${{post.sale}} Rent: ${{post.rent}}
-                           <br>
-                           {{post.address}} , {{post.zipcode}}
-                       </p>
-                   </div>
-               </a>
-           </div>
-            <div ng-repeat-end></div>
-    </div>
-    
+    <div class="your-posts container">
+            <h2>Your Posts</h2>
+            <div class="thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3" style="background:url({{post.imageURL}}) no-repeat center;" ng-repeat="post in info | orderBy:'timestamps':true | startFrom:currentPage*pageSize | limitTo:pageSize">
+
+                   <!-- Edit Button -->
+                   <a href=/put/post/{{post._id}} type="button" class="btn btn-primary pull-right">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+
+                   <a href="/post/{{post._id}}">
+                       <div  class="thumb">
+                           <!--<img class= "thumbnail" class="img-responsive" src="{{post.imageURL}}"> -->
+                           <p>
+                               Sale: ${{post.sale}} Rent: ${{post.rent}}
+                               <br>
+                               {{post.address}} , {{post.zipcode}}
+                           </p>
+                       </div>
+                   </a>
+               </div>
+                <div ng-repeat-end></div>
+        </div>
 </div>
 
