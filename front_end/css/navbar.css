@@ -1,0 +1,15 @@
+.navbar-homepage .navbar{
+   margin-bottom: 0px;
+}
+
+.navbar-search .navbar{
+   margin-bottom: 0px;
+}
+
+@media (max-width: 480px) {
+    .navbar-search .navbar .navbar-brand{
+        text-indent: 30px;
+        z-index:-1px;
+    }
+}
+
