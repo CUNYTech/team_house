@@ -2,6 +2,9 @@
    margin-bottom: 0px;
 }
 
+* {
+  font-family: 'Droid Serif', serif; 
+}
 /*Home Page*/
   .jumbotron {
     /*/height: 500px;*/
@@ -32,6 +35,7 @@
    }
 
    .thumb p{
+    font-family: 'Droid Serif', serif; 
     position: absolute;
     bottom: 0;
     right: 0;
