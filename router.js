@@ -8,11 +8,12 @@ const express = require('express'),
     Authentication = require('./middleware/authentication'),
     passportService = require('./config/passport'),
     forum = require('./models/forum')(mongoose),
-    User = require('./models/user');
+    User = require('./models/user'),
+    axios = require('axios'),
+    toJson = require('xmljson').to_json;
 
 router.use('/node',express.static(path.join(__dirname, 'node_modules')));
 router.use(express.static(path.join(__dirname, 'front_end')));
-
 
 const requireAuth = passport.authenticate('jwt', {
     session: false
@@ -186,7 +187,7 @@ router.put('/put/:id', requireAuth, function(req, res) {
             } else {
                 return res.status(201).send({message: "Profile Success"});
             }
-        })
+        });
     });
 });
 
@@ -206,12 +207,31 @@ router.put('/put/post/:id', requireAuth, function(req, res) {
 
         post.save(function(err){
             if(err){
-                return errl
+                return err;
             } else {
                 return res.status(201).send({message: "Post Success"});
             }
-        })
+        });
     });
+});
+
+router.get('/house/:address/:citystate', (req, res) =>{
+    const address = req.params.address,
+          citystate = req.params.citystate,
+          Zillow = 'http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=',
+          KEY = process.env.ZWSID || require('./config/main').ZWSID;
+
+        let house = Zillow + KEY + '&address=' + address + '&citystatezip=' + citystate;
+
+        axios.get(house)
+                .then(function (response) {
+                    toJson(response.data, function (error, data) {
+                        res.json(data);
+                    });
+                })
+                .catch(function (error) {
+                    return error;
+                });
 });
 
 router.use('*', function(req, res) {

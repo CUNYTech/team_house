@@ -51,6 +51,11 @@
                 controller: 'SearchCtrl',
                 controllerAs: 'vm'
             })
+            .when('/house', {
+                templateUrl: 'component/housedetail/housedetail.html',
+                controller: 'HouseDetail',
+                controllerAs: 'vm'
+            })
             .otherwise({
                 redirectTo: '/'
             });
