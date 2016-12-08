@@ -1,3 +1,5 @@
+<navbar></navbar>
+
 <div class="col-md-6 col-md-offset-3">
     <form>
         <div class="form-group">
@@ -9,13 +11,37 @@
             <input type="text" class="form-control input-lg" placeholder="City, State" tabindex="5" ng-model="vm.house.citystate">
         </div>
         <div class="col-md-6 col-md-offset-3">
-            <button class="btn btn-primary btn-block btn-lg" ng-click="vm.getHouse()">Login</button>
+            <button class="btn btn-primary btn-block btn-lg" ng-click="vm.getHouse()">Search</button>
         </div>
     </form>
-</div>
-
-<div ng-show="vm.haveInfo">
-    <div>
-        asdas
+    <div class="col-md-6 col-md-offset-3" ng-show="vm.haveInfo">
+        <p>
+            {{vm.houseInfo.address.street}},
+        </p>
+        <p>
+            {{vm.houseInfo.address.city}}, {{vm.houseInfo.address.state}} {{vm.houseInfo.address.zipcode}}
+        </p>
+        <p>
+            Last sold: {{vm.houseInfo.lastSoldDate}} for {{vm.houseInfo.lastSoldPrice._}} {{vm.houseInfo.lastSoldPrice.$.currency}}
+        </p>
+        <p>
+            This is a {{vm.houseInfo.finishedSqFt}} sqft home.
+        </p>
+        <p>
+            Lot: {{vm.houseInfo.lotSizeSqFt}} sqft
+        </p>
+        <p>
+            {{vm.houseInfo.useCode}} house
+        </p>
+        <p>
+            {{vm.houseInfo.yearBuilt}} 1950
+        </p>
+        <p ng-show="vm.houseInfo.bathrooms">
+            Bathrooms: {{vm.houseInfo.bathrooms}}
+        </p>
+        <p ng-show="vm.houseInfo.bedrooms">
+            Bedrooms: {{vm.houseInfo.bedrooms}}
+        </p>
     </div>
 </div>
+
