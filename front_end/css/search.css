@@ -1,5 +1,8 @@
 /*Sidebar on Search Page*/
 
+.temp {
+  display:inline;
+}
 #sidebar-wrapper {
   z-index: 1;
   position: absolute;
@@ -36,6 +39,7 @@
   text-indent:0px;
   margin-top:10px;
 }
+
 #sidebar-price button{
   left:85px;
   position:relative;
@@ -43,30 +47,48 @@
 }
 
 #sidebar-price input{
-  width: 80px;
+  display:inline;
+  width: 83px;
 }
 
 #sidebar-toggle{
   position:absolute;
-  padding-left:14px;
-  padding-top:25px;
+  top:0px;
+  left:-5px;
+  border-width: 3px;
+  background: transparent;
+  color:white;
   visibility: hidden;
 }
+
+#sidebar-toggle:focus{
+  outline:0;
+}
+
+#sidebar-toggle:hover{
+  color: darkgrey;
+}
+
 #search-content{
   width:100%;
   padding-left:215px;
   position: absolute;
 }
 
-@media (max-width: 660px) {
+@media (max-width: 480px) {
   #sidebar-wrapper  {
     width:0px
   }
 
+  /*#sidebar-toggle{
+    position:relative; 
+    visibility: visible;
+  }*/
+
   #sidebar-toggle{
-    position:relative; /*Moves the search content down*/
     visibility: visible;
   }
+
   #search-content {
     padding:25px;
   }
