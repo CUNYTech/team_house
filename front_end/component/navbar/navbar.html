@@ -29,8 +29,9 @@
                 <li ng-hide="vm.isAuthenticated"><a href="/login">Login</a></li>
                 <li ng-hide="vm.isAuthenticated"><a href="/register">Register</a></li>
                 <li ng-show="vm.isAuthenticated"><a href="/profile">Profile</a></li>
-                <li ng-show="vm.isAuthenticated"><a href="" ng-click="vm.logout()">Logout</a></li>
                 <li ng-show="vm.isAuthenticated"><a href="/forum">Post</a></li>
+                <li ><a href="/house">House Detail</a></li>
+                <li ng-show="vm.isAuthenticated"><a href="" ng-click="vm.logout()">Logout</a></li>
             </ul>
         </div>
     </div>
