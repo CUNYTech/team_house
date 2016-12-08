@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('homeFinder', ['ngRoute'])
+        .module('homeFinder', ['ngRoute', 'ngAnimate', 'toastr'])
         .config(config)
         .run(run);
 
