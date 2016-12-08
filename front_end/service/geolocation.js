@@ -6,8 +6,8 @@ function geolocation(){
 
    // Find location with geolocation
    navigator.geolocation.getCurrentPosition(function(position) {
-     console.log("Latitude : %s", position.coords.latitude);
-     console.log("Longitude : %s", position.coords.longitude);
+    //  console.log("Latitude : %s", position.coords.latitude);
+    //  console.log("Longitude : %s", position.coords.longitude);
      var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
     geocoder.geocode({'latLng': latlng}, function(results, status) {
@@ -16,7 +16,7 @@ function geolocation(){
               let postalCode = results[0].address_components.find(function (component) {
               return component.types[0] == "postal_code";
               });
-              console.log(postalCode.long_name);
+              localStorage.setItem("zipcode", postalCode.long_name);
             } else {
                 console.log('No results found');
             }
@@ -32,8 +32,8 @@ function geolocation(){
          ip = response.ip;
          $.get("http://ipinfo.io/" + ip, function(responce) {
           //  y.innerHTML = "Ip adress: " + ip +        
-        console.log("Latitude : %s", response.loc.split(',')[0]);
-        console.log("Longitude : %s", response.loc.split(',')[1]);
+        // console.log("Latitude : %s", response.loc.split(',')[0]);
+        // console.log("Longitude : %s", response.loc.split(',')[1]);
         var latlng = new google.maps.LatLng(response.loc.split(',')[0], response.loc.split(',')[1]);
 
         geocoder.geocode({'latLng': latlng}, function(results, status) {
@@ -42,7 +42,7 @@ function geolocation(){
                     let postalCode = results[0].address_components.find(function (component) {
                     return component.types[0] == "postal_code";
                 });
-                console.log(postalCode.long_name);
+                localStorage.setItem("zipcode", postalCode.long_name);
                 } else {
                     console.log('No results found');
                 }
