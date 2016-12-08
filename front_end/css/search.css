@@ -4,7 +4,7 @@
   z-index: 1;
   position: absolute;
   width : 200px;
-  height: 75%;
+  height: 100%;
   overflow-y:hidden;
   background-color: #dcdcdc;
 }
