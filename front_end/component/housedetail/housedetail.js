@@ -6,13 +6,19 @@
         .controller('HouseDetail', ['$scope', '$http', '$location','authToken', function($scope, $http, $location, authToken){ 
             let vm = this;
 
+            vm.haveInfo = false;
+            vm.house = {
+                address: '',
+                citystate: ''
+            };
             vm.getHouse = function() {
-                $http.get('/house/2114%20Bigelow%20Ave/Seattle,WA')
+                $http.get('/house/' + vm.house.address + '/' + vm.house.citystate)
                     .success(function(response) {
-                        console.log(response['SearchResults:searchresults'].response.results.result);
-                    })
-                    .error(function(error) {
-                        console.log(error.error);
+                        if (response['SearchResults:searchresults'].message.code !== '0'){
+                            throw Error(response['SearchResults:searchresults'].message.text);
+                        }
+                        vm.houseInfo = response['SearchResults:searchresults'].response.results.result;
+                        vm.haveInfo = true;
                     });
             };
         }]);

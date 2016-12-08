@@ -1,5 +1,21 @@
-<div>
-    <div class="col-md-6 col-md-offset-3">
-        <button class="btn btn-primary btn-block btn-lg" ng-click="vm.getHouse()">Login</button>
+<div class="col-md-6 col-md-offset-3">
+    <form>
+        <div class="form-group">
+            <label for="inputEmail">Address</label>
+            <input class="form-control input-lg" placeholder="Address" type="text" tabindex="4" ng-model="vm.house.address">
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">City, State</label>
+            <input type="text" class="form-control input-lg" placeholder="City, State" tabindex="5" ng-model="vm.house.citystate">
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+            <button class="btn btn-primary btn-block btn-lg" ng-click="vm.getHouse()">Login</button>
+        </div>
+    </form>
+</div>
+
+<div ng-show="vm.haveInfo">
+    <div>
+        asdas
     </div>
 </div>
