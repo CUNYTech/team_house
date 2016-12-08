@@ -1,13 +1,15 @@
-.navbar{
+.navbar-homepage .navbar{
    margin-bottom: 0px;
 }
 
-* {
+*{
   font-family: 'Droid Serif', serif; 
 }
+
 /*Home Page*/
   .jumbotron {
     /*/height: 500px;*/
+    font-family: 'Droid Serif', serif; 
     color: lightgrey;
     background: url("assets/naturehouse.jpg") no-repeat center center;
     background-size: cover;
