@@ -36,6 +36,10 @@
                 controller: 'CommentCtrl',
                 controllerAs: 'vm'
             })
+            .when('/delete/post/:id', {
+                templateUrl: 'component/profile/profile.html',
+                controller: 'ProfileCtrl'
+            })
             .when('/put/:id', {
                 templateUrl: 'component/register/register.html',
                 controller: 'EditProfileCtrl',

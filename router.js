@@ -215,6 +215,27 @@ router.put('/put/post/:id', requireAuth, function(req, res) {
     });
 });
 
+router.delete('/delete/post/:postid', requireAuth, function(req, res) {
+    var Post = forum.post;
+    console.log("here");
+    forum.Post.findById(req.params.id, function(err, postData) {
+        if (err){ 
+            console.log(err);
+            return err;
+        }
+
+        var post = postData;
+        console.log(postData);
+        post.delete(function(err){
+            if(err){
+                return err;
+            } else {
+                return res.status(410).send({message: "Delete Success"});
+            }
+        });
+    });
+});
+
 router.get('/house/:address/:citystate', (req, res) =>{
     const address = req.params.address,
           citystate = req.params.citystate,
