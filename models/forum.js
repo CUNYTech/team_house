@@ -29,6 +29,17 @@ module.exports = function(mongoose) {
             type: String,
             required: true
         },
+        zillow:{
+            lastSoldDate: String,
+            lastSoldPrice: String,
+            lastSoldCurrency: String,
+            finishedSqFt: String,
+            lotSizeSqFt: String,
+            useCode: String,
+            yearBuilt: String,
+            bathrooms: String,
+            bedrooms: String
+        },
         comments: [{
             type: Schema.Types.ObjectId,
             ref: 'Comment'
