@@ -38,14 +38,14 @@
         </form>
     </div>
     <div class="col-md-12">
-        <h3>Comments</h3>
+        <h3>Comments:</h3>
     </div>
     <div class="col-md-12" ng-repeat="x in commentInfo.comments | orderBy:'timestamps':true">
         <p>
             {{x.createdBy.fullname}}
         </p>
         <p>
-            {{x.content}}
+            ~{{x.content}}
         </p>
         <hr>
     </div>

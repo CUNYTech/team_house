@@ -8,11 +8,12 @@
 
             vm.login = authToken.getToken();
             vm.haveInfo = false;
-
             vm.post = {
                 content: ''
             };
-
+            
+            	
+                        
             if (vm.login){
                 vm.getInfo = userPost.commentInfo($routeParams.id)
                                 .then(function(result){
@@ -50,5 +51,7 @@
                         });
                 };
             }
+            
+            
         }]);
 })();

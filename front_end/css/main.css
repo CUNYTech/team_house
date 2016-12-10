@@ -1,3 +1,16 @@
+#error{
+    color: red;
+    text-align: center;
+}
+
+.btn-primary{
+    border-radius: 10%;
+}
+
+body{
+    background-color: lightgrey;
+}
+
 div div p {
     font-size: 20px;
 }
@@ -18,6 +31,7 @@ div div p {
 
   .jumbotron-text {  
     text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    margin-left: 10px;
   }
 
   .pagecount {
@@ -49,6 +63,8 @@ div div p {
     color: lightgray;
     font-size: 20px;
   }
+
+
    /*img.thumbnail{
     position: relative; 
    }

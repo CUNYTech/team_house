@@ -14,6 +14,8 @@
                     })
                     .error(function(error) {
                         console.log(error.error);
+                        document.getElementById("error").innerHTML = "Wrong keyword entry."
+                        return false;
                     });
             };
         }]);

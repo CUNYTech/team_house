@@ -6,12 +6,10 @@
 </script>
 <!--<div class="container">-->
 <div class="jumbotron">
-    <div class="container">
         <h1 class="jumbotron-text">Home Finder</h1>
         <p class="jumbotron-text">Where Finding A Home Is Made Easy</p>
-        <p><a href="/search" class="btn btn-primary btn-large">See All Listings</a>
+        <p class="jumbotron-text"><a href="/search" class="btn btn-primary btn-large">See All Listings</a>
         </p>
-    </div>
 </div>
 <!--<div>-->
 
@@ -33,11 +31,11 @@
             <div ng-repeat-end></div>
         </div>
         <div class="pagecount">
-            <button class="btn" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+            <button class="btn-primary" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
                 Previous
             </button>
             {{currentPage+1}}/{{numberOfPages()}}
-            <button class="btn" ng-disabled="currentPage >= info.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+            <button class="btn-primary" ng-disabled="currentPage >= info.length/pageSize - 1" ng-click="currentPage=currentPage+1">
                 Next
             </button>
         </div>

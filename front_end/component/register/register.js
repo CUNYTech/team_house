@@ -15,6 +15,8 @@
                     })
                     .error(function(error){
                         console.log(error.error);
+                        document.getElementById("error").innerHTML = "Account already exist."
+                        return false;
                     });
             };
         }]);
