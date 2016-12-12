@@ -16,7 +16,7 @@ function geolocation(){
               let postalCode = results[0].address_components.find(function (component) {
               return component.types[0] == "postal_code";
               });
-              localStorage.setItem("zipcode", postalCode.long_name);
+              localStorage.setItem("hzipcode", postalCode.long_name);
             } else {
                 console.log('No results found');
             }
@@ -42,7 +42,7 @@ function geolocation(){
                     let postalCode = results[0].address_components.find(function (component) {
                     return component.types[0] == "postal_code";
                 });
-                localStorage.setItem("zipcode", postalCode.long_name);
+                localStorage.setItem("hzipcode", postalCode.long_name);
                 } else {
                     console.log('No results found');
                 }
