@@ -24,8 +24,23 @@
             //                         };
             //                     });
             // }
-            $("#neighborhood-button").click(function(){ 
-                vm.getInfo = publicPost.houseInfo()
+            // var neighborhoodButton = document.getElementById("neighborhood-button");
+            // neighborhoodButton.addEventListener("click", function(){ 
+            //     vm.getInfo = publicPost.houseInfo()
+            //                     .then(function(result){
+            //                         vm.haveInfo = true;
+            //                         $scope.info = result;
+            //                         $scope.info = $filter('filter')(result, {zipcode: localStorage.getItem("hzipcode")});
+            //                         $scope.currentPage = 0;
+            //                         $scope.pageSize = 8;
+            //                         $scope.numberOfPages=function(){
+            //                             return Math.ceil($scope.info.length/$scope.pageSize);                
+            //                         };
+            //                     });
+            // });
+
+            $scope.localListings = function(){
+                 vm.getInfo = publicPost.houseInfo()
                                 .then(function(result){
                                     vm.haveInfo = true;
                                     $scope.info = result;
@@ -36,7 +51,7 @@
                                         return Math.ceil($scope.info.length/$scope.pageSize);                
                                     };
                                 });
-            })
+            }
             if (vm.login){
                 vm.getInfo = userPost.houseInfo()
                                 .then(function(result){
