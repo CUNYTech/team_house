@@ -1,10 +1,10 @@
 <navbar></navbar>
 <div class="container" ng-submit="vm.submit()">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-sm-12 col-md-4">
             <img src="{{commentInfo.imageURL}}"style="width:300px;height:300px;">
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-12 col-sm-6 col-md-4">
             <h2>
                 {{commentInfo.title}}
             </h2>
@@ -15,39 +15,39 @@
                 {{commentInfo.content}}
             </p>
         </div>
-        <div class="col-md-2">
+        <div class="col-xs-6 col-sm-3 col-md-2">
             <p>
                 <h3>For Sale</h3> ${{commentInfo.sale}} 
                 <h3>To Rent</h3> ${{commentInfo.rent}}
             </p>
         </div>
-        <div class="col-md-2" >
+        <div class="col-xs-6 col-sm-3 col-md-2">
             <h3>Contact</h3> {{commentInfo.createdBy.fullname}}
         </div>
-        <div ng-show="commentInfo.zillow">
-            <div class="col-md-2" ng-show="commentInfo.zillow.bathrooms">
+        <div class="container" ng-show="commentInfo.zillow">
+            <div class="col-xs-6 col-sm-2 col-md-2" ng-show="commentInfo.zillow.bathrooms">
                 <p>Bathrooms</p> {{commentInfo.zillow.bathrooms}}
             </div>
-            <div class="col-md-2" ng-show="commentInfo.zillow.bedrooms">
-                <p>bedrooms</p> {{commentInfo.zillow.bedrooms}}
+            <div class="col-xs-6 col-sm-2 col-md-2" ng-show="commentInfo.zillow.bedrooms">
+                <p>Bedrooms</p> {{commentInfo.zillow.bedrooms}}
             </div>
-            <div class="col-md-2" ng-show="commentInfo.zillow.finishedSqFt">
-                <p>finishedSqFt</p> {{commentInfo.zillow.finishedSqFt}}
+            <div class="col-xs-6 col-sm-2 col-md-2" ng-show="commentInfo.zillow.finishedSqFt">
+                <p>Square Feet</p> {{commentInfo.zillow.finishedSqFt}}
             </div>
-            <div class="col-md-2" ng-show="commentInfo.zillow.lotSizeSqFt">
-                <p>Lot size</p> {{commentInfo.zillow.lotSizeSqFt}}
+            <div class="col-xs-6 col-sm-2 col-md-2" ng-show="commentInfo.zillow.lotSizeSqFt">
+                <p>Lot Size</p> {{commentInfo.zillow.lotSizeSqFt}}
             </div>
-            <div class="col-md-2" ng-show="commentInfo.zillow.useCode"> 
-                <p>House: </p> {{commentInfo.zillow.useCode}}
+            <div class="col-xs-6 col-sm-2 col-md-2" ng-show="commentInfo.zillow.useCode"> 
+                <p>House</p> {{commentInfo.zillow.useCode}}
             </div>
-            <div class="col-md-2" ng-show="commentInfo.zillow.yearBuilt">
-                <p>yearBuilt:</p> {{commentInfo.zillow.yearBuilt}}
+            <div class="col-xs-6 col-sm-2 col-md-2" ng-show="commentInfo.zillow.yearBuilt">
+                <p>Year Built</p> {{commentInfo.zillow.yearBuilt}}
             </div>
-            <div class="col-md-2" ng-show="commentInfo.zillow.lastSoldPrice">
-                <p>Last Sold For </p> {{commentInfo.zillow.lastSoldPrice}} {{commentInfo.zillow.lastSoldCurrency}}
+            <div class="col-xs-6 col-sm-2 col-md-2" ng-show="commentInfo.zillow.lastSoldPrice">
+                <p>Last Sold For</p> {{commentInfo.zillow.lastSoldPrice}} {{commentInfo.zillow.lastSoldCurrency}}
             </div>
-            <div class="col-md-2" ng-show="commentInfo.zillow.lastSoldDate">
-                <p>Last Sold Date:</p> {{commentInfo.zillow.lastSoldDate}}
+            <div class="col-xs-6col-sm-2 col-md-2" ng-show="commentInfo.zillow.lastSoldDate">
+                <p>Last Sold Date</p> {{commentInfo.zillow.lastSoldDate}}
             </div>
         </div>
 
