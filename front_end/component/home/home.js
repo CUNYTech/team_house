@@ -24,26 +24,24 @@
             //                         };
             //                     });
             // }
-            if(localStorage.getItem("zipcode") !== null && localStorage.getItem("zipcode") !== 'undefined'){
+            $("#neighborhood-button").click(function(){ 
                 vm.getInfo = publicPost.houseInfo()
                                 .then(function(result){
                                     vm.haveInfo = true;
                                     $scope.info = result;
-                                    $scope.info = $filter('filter')(result, {zipcode: localStorage.getItem("zipcode")});
-                                    localStorage.removeItem("zipcode");
+                                    $scope.info = $filter('filter')(result, {zipcode: localStorage.getItem("hzipcode")});
                                     $scope.currentPage = 0;
                                     $scope.pageSize = 8;
                                     $scope.numberOfPages=function(){
                                         return Math.ceil($scope.info.length/$scope.pageSize);                
                                     };
                                 });
-            }
-            else if (vm.login){
+            })
+            if (vm.login){
                 vm.getInfo = userPost.houseInfo()
                                 .then(function(result){
                                     vm.haveInfo = true;
                                     $scope.info = result;
-                                    localStorage.removeItem("zipcode");
                                     $scope.currentPage = 0;
                                     $scope.pageSize = 8;
                                     $scope.numberOfPages=function(){
@@ -56,7 +54,6 @@
                                 .then(function(result){
                                     vm.haveInfo = true;
                                     $scope.info = result;
-                                    localStorage.removeItem("zipcode");
                                     $scope.currentPage = 0;
                                     $scope.pageSize = 8;
                                     $scope.numberOfPages=function(){
