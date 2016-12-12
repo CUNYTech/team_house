@@ -53,10 +53,10 @@ router.post('/post', requireAuth, function(req, res) {
         zipcode: req.body.zipcode,
         address: req.body.address,
         rent: req.body.rent,
-        sale: req.body.sale
+        sale: req.body.sale,
+        zillow: req.body.zillow,
     });
-
-    console.log(post);
+    
     post.save(function(err, post) {
         if (err) {
             return err;

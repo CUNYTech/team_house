@@ -21,9 +21,36 @@
                 <h3>To Rent</h3> ${{commentInfo.rent}}
             </p>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2" >
             <h3>Contact</h3> {{commentInfo.createdBy.fullname}}
         </div>
+        <div ng-show="commentInfo.zillow">
+            <div class="col-md-2" ng-show="commentInfo.zillow.bathrooms">
+                <p>Bathrooms</p> {{commentInfo.zillow.bathrooms}}
+            </div>
+            <div class="col-md-2" ng-show="commentInfo.zillow.bedrooms">
+                <p>bedrooms</p> {{commentInfo.zillow.bedrooms}}
+            </div>
+            <div class="col-md-2" ng-show="commentInfo.zillow.finishedSqFt">
+                <p>finishedSqFt</p> {{commentInfo.zillow.finishedSqFt}}
+            </div>
+            <div class="col-md-2" ng-show="commentInfo.zillow.lotSizeSqFt">
+                <p>Lot size</p> {{commentInfo.zillow.lotSizeSqFt}}
+            </div>
+            <div class="col-md-2" ng-show="commentInfo.zillow.useCode"> 
+                <p>House: </p> {{commentInfo.zillow.useCode}}
+            </div>
+            <div class="col-md-2" ng-show="commentInfo.zillow.yearBuilt">
+                <p>yearBuilt:</p> {{commentInfo.zillow.yearBuilt}}
+            </div>
+            <div class="col-md-2" ng-show="commentInfo.zillow.lastSoldPrice">
+                <p>Last Sold For </p> {{commentInfo.zillow.lastSoldPrice}} {{commentInfo.zillow.lastSoldCurrency}}
+            </div>
+            <div class="col-md-2" ng-show="commentInfo.zillow.lastSoldDate">
+                <p>Last Sold Date:</p> {{commentInfo.zillow.lastSoldDate}}
+            </div>
+        </div>
+
     </div>
     <br>
     <div class="col-md-12">
