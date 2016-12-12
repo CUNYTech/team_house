@@ -30,6 +30,19 @@
   padding:none;*/
 }
 
+/*.room-sidebar input{
+  left:20px;
+  text-indent:20px;
+}*/
+
+/*.room-sidebar .input{
+  left:20px;
+  text-indent:20px;
+}*/
+
+.room-sidebar{
+  margin-left:20px;
+}
 #sidebar-wrapper a:hover{
   color:orange
 }
