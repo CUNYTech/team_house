@@ -5,11 +5,10 @@
         .module('homeFinder')
         .controller('SearchCtrl', ['$scope', '$http', '$filter', 'userPost', 'publicPost', 'authToken', function($scope, $http, $filter, userPost, publicPost,authToken){ 
             //Changes CSS when sidebar-toggle button is clicked
-            $("#sidebar-toggle").click(function(e) {
-                $('#search-wrapper').toggleClass('toggleSidebar');
-             });
+             $scope.sidebarToggle = function(){
+                  $('#search-wrapper').toggleClass('toggleSidebar');
+             }
 
-            
             let vm = this;
 
             //vm.login = authToken.getToken();
