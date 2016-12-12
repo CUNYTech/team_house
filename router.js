@@ -215,9 +215,8 @@ router.put('/put/post/:id', requireAuth, function(req, res) {
     });
 });
 
-router.delete('/delete/post/:postid', requireAuth, function(req, res) {
+router.delete('/delete/post/:id', requireAuth, function(req, res) {
     var Post = forum.post;
-    console.log("here");
     forum.Post.findById(req.params.id, function(err, postData) {
         if (err){ 
             console.log(err);
@@ -226,11 +225,12 @@ router.delete('/delete/post/:postid', requireAuth, function(req, res) {
 
         var post = postData;
         console.log(postData);
-        post.delete(function(err){
+        post.remove(function(err){
             if(err){
                 return err;
             } else {
-                return res.status(410).send({message: "Delete Success"});
+                console.log("In success on server")
+                return res.status(202).send({message: "Delete Successful"});
             }
         });
     });

@@ -38,7 +38,7 @@
             })
             .when('/delete/post/:id', {
                 templateUrl: 'component/profile/profile.html',
-                controller: 'ProfileCtrl'
+                controller: 'DeleteForumCtrl'
             })
             .when('/put/:id', {
                 templateUrl: 'component/register/register.html',

@@ -18,9 +18,13 @@
                         <span class="glyphicon glyphicon-pencil"></span>
                    </a>
                    <!-- Delete Button -->
-                   <a href=/delete/post/{{post._id}} type="button" class="btn btn-danger pull-right">
+                   <a ng-submit="vm.delete()" href=/delete/post/{{post._id}} type="submit" class="btn btn-danger pull-right">
                         <span class="glyphicon glyphicon-remove"></span>
                    </a>
+
+                   <!--<a ng-submit="vm.delete()" type="submit" class="btn btn-danger pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                   </a>-->
 
                    <a href="/post/{{post._id}}">
                        <div  class="thumb">
