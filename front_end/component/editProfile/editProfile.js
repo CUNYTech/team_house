@@ -24,10 +24,10 @@
                 $scope.editProfile = function() {
                     $http.put('/put/' + $routeParams.id, $scope.user)
                         .success(function(response) {
+                            toastr.success("Profile Edited");
                             $location.path('/profile');
                         })
                         .error(function(error){
-                            toastr.Error(error.error);
                             console.log(error.error);
                         });
                 };
