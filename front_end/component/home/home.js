@@ -3,7 +3,7 @@
 
     angular
         .module('homeFinder')
-        .controller('HomeCtrl', ['$scope', '$http', '$filter', 'userPost', 'publicPost', 'authToken', function($scope, $http, $filter, userPost, publicPost,authToken){ 
+        .controller('HomeCtrl', ['$scope', '$http', '$filter', 'userPost', 'publicPost', 'authToken', function($scope, $http, $filter, userPost, publicPost,authToken){
             let vm = this;
 
             //vm.login = authToken.getToken();
@@ -20,12 +20,12 @@
             //                         $scope.currentPage = 0;
             //                         $scope.pageSize = 5;
             //                         $scope.numberOfPages=function(){
-            //                             return Math.ceil($scope.info.length/$scope.pageSize);                
+            //                             return Math.ceil($scope.info.length/$scope.pageSize);
             //                         };
             //                     });
             // }
             // var neighborhoodButton = document.getElementById("neighborhood-button");
-            // neighborhoodButton.addEventListener("click", function(){ 
+            // neighborhoodButton.addEventListener("click", function(){
             //     vm.getInfo = publicPost.houseInfo()
             //                     .then(function(result){
             //                         vm.haveInfo = true;
@@ -34,7 +34,7 @@
             //                         $scope.currentPage = 0;
             //                         $scope.pageSize = 8;
             //                         $scope.numberOfPages=function(){
-            //                             return Math.ceil($scope.info.length/$scope.pageSize);                
+            //                             return Math.ceil($scope.info.length/$scope.pageSize);
             //                         };
             //                     });
             // });
@@ -48,10 +48,10 @@
                                     $scope.currentPage = 0;
                                     $scope.pageSize = 8;
                                     $scope.numberOfPages=function(){
-                                        return Math.ceil($scope.info.length/$scope.pageSize);                
+                                        return Math.ceil($scope.info.length/$scope.pageSize);
                                     };
                                 });
-            }
+            };
             if (vm.login){
                 vm.getInfo = userPost.houseInfo()
                                 .then(function(result){
@@ -60,7 +60,7 @@
                                     $scope.currentPage = 0;
                                     $scope.pageSize = 8;
                                     $scope.numberOfPages=function(){
-                                        return Math.ceil($scope.info.length/$scope.pageSize);                
+                                        return Math.ceil($scope.info.length/$scope.pageSize);
                                     };
                                 });
             }
@@ -72,11 +72,11 @@
                                     $scope.currentPage = 0;
                                     $scope.pageSize = 8;
                                     $scope.numberOfPages=function(){
-                                        return Math.ceil($scope.info.length/$scope.pageSize);                
+                                        return Math.ceil($scope.info.length/$scope.pageSize);
                                     };
                                 });
             }
-        }])     
+        }])
         .filter('startFrom', function() {
             return function(input, start) {
                 if (!input || !input.length) { return; }
