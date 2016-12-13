@@ -16,7 +16,7 @@
                                     vm.haveInfo = true;
                                     vm.post = result;                             
                                 });
-                vm.submit = function() {
+                $scope.editForum = function() {
                     $http.put('/put/post/' + $routeParams.id, vm.post)
                         .success(function(response) {
                             $location.path('/profile');
