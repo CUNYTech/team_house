@@ -9,9 +9,9 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "angular": "^1.5.8",
-    "angular-animate": "^1.5.8",
-    "angular-route": "^1.5.8",
+    "angular": "^1.5.9",
+    "angular-animate": "^1.5.9",
+    "angular-route": "^1.5.9",
     "angular-toastr": "^2.1.1",
     "axios": "^0.15.3",
     "bcrypt-nodejs": "0.0.3",
