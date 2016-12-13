@@ -22,7 +22,7 @@
                                     $scope.info = $filter('filter')(result, {zipcode: localStorage.getItem("zipcode")});
                                     localStorage.removeItem("zipcode");
                                     $scope.currentPage = 0;
-                                    $scope.pageSize = 8;
+                                    $scope.pageSize = 12;
                                     $scope.numberOfPages=function(){
                                         return Math.ceil($scope.info.length/$scope.pageSize);                
                                     };
@@ -35,7 +35,7 @@
                                     $scope.info = result;
                                     localStorage.removeItem("zipcode");
                                     $scope.currentPage = 0;
-                                    $scope.pageSize = 8;
+                                    $scope.pageSize = 12;
                                     $scope.numberOfPages=function(){
                                         return Math.ceil($scope.info.length/$scope.pageSize);                
                                     };
@@ -48,7 +48,7 @@
                                     $scope.info = result;
                                     localStorage.removeItem("zipcode");
                                     $scope.currentPage = 0;
-                                    $scope.pageSize = 8;
+                                    $scope.pageSize = 12;
                                     $scope.numberOfPages=function(){
                                         return Math.ceil($scope.info.length/$scope.pageSize);                
                                     };
