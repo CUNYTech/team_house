@@ -5,6 +5,7 @@
     "node": "7.2.1"
   },
   "scripts": {
+    "heroku-prebuild": "npm install",
     "start": "node app.js"
   },
   "dependencies": {
