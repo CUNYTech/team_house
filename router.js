@@ -56,7 +56,7 @@ router.post('/post', requireAuth, function(req, res) {
         sale: req.body.sale,
         zillow: req.body.zillow,
     });
-    
+
     post.save(function(err, post) {
         if (err) {
             return err;
@@ -218,7 +218,7 @@ router.put('/put/post/:id', requireAuth, function(req, res) {
 router.delete('/delete/post/:id', requireAuth, function(req, res) {
     var Post = forum.post;
     forum.Post.findById(req.params.id, function(err, postData) {
-        if (err){ 
+        if (err){
             console.log(err);
             return err;
         }
@@ -229,7 +229,7 @@ router.delete('/delete/post/:id', requireAuth, function(req, res) {
             if(err){
                 return err;
             } else {
-                console.log("In success on server")
+                console.log("In success on server");
                 return res.status(202).send({message: "Delete Successful"});
             }
         });

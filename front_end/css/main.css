@@ -11,20 +11,20 @@ div div p {
 }
 
 *{
-  font-family: 'Droid Serif', serif; 
+  font-family: 'Droid Serif', serif;
 }
 
 /*Home Page*/
   .jumbotron {
     /*/height: 500px;*/
-    font-family: 'Droid Serif', serif; 
-    color: lightgrey;
+    font-family: 'Droid Serif', serif;
+    color: white;
     background: url("assets/naturehouse.jpg") no-repeat center center;
     background-size: cover;
     height: 100%;
   }
 
-  .jumbotron-text {  
+  .jumbotron-text {
     text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
   }
 
@@ -45,7 +45,7 @@ div div p {
    }
 
    .thumb p{
-    font-family: 'Droid Serif', serif; 
+    font-family: 'Droid Serif', serif;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -54,16 +54,15 @@ div div p {
     margin: 0 auto;
     text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
     text-align: center;
-    color: lightgray;
+    color: white;
     font-size: 20px;
   }
    /*img.thumbnail{
-    position: relative; 
+    position: relative;
    }
 
    p.thumbnail{
-     position: absolute; 
-     top: 50px; 
+     position: absolute;
+     top: 50px;
    }*/
 /*Home Page*/
-
