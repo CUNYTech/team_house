@@ -3,7 +3,7 @@
 
     angular
         .module('homeFinder')
-        .controller('EditProfileCtrl', ['$scope', '$http', '$location', 'authToken', '$routeParams', function($scope, $http, $location, authToken, $routeParams){
+        .controller('EditProfileCtrl', ['$scope', '$http', '$location', 'authToken', '$routeParams', 'toastr', function($scope, $http, $location, authToken, $routeParams, toastr){
             $http.get('/user')
                 .success(function(response) {
                     $scope.user = {};
@@ -24,6 +24,7 @@
                 $scope.editProfile = function() {
                     $http.put('/put/' + $routeParams.id, $scope.user)
                         .success(function(response) {
+                            toastr.success("Profile Edited");
                             $location.path('/profile');
                         })
                         .error(function(error){

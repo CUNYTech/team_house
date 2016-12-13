@@ -3,7 +3,7 @@
 
     angular
         .module('homeFinder')
-        .controller('LoginController', ['$scope', '$http', '$location','authToken', 'toastr', function($scope, $http, $location, authToken, toastr){ 
+        .controller('LoginController', ['$scope', '$http', '$location','authToken', 'toastr', function($scope, $http, $location, authToken, toastr){
             $scope.loginUser = function() {
                 //$http.post('/login', $scope.user).then(successCallBack, errorCallback);
                 $http.post('/login', $scope.user)

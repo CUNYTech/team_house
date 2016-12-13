@@ -19,9 +19,9 @@
                             toastr.error(response['SearchResults:searchresults'].message.text);
                             throw Error(response['SearchResults:searchresults'].message.text);
                         }
-                        console.log(response);
+                        // console.log(response);
                         vm.houseInfo = response['SearchResults:searchresults'].response.results.result;
-                        console.log(vm.houseInfo);
+                        // console.log(vm.houseInfo);
                         vm.haveInfo = true;
                     });
             };
