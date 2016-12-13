@@ -7,13 +7,13 @@
             $scope.loginUser = function() {
                 //$http.post('/login', $scope.user).then(successCallBack, errorCallback);
                 $http.post('/login', $scope.user)
-                    .then(function(response) {
+                    .success(function(response) {
                         toastr.success('Login Success');
                         $location.path('/');
                         authToken.setToken(response.token);
                         $http.defaults.headers.common.Authorization = response.token;
                     })
-                    .catch(function(error) {
+                    .error(function(error) {
                         toastr.error("The username and password you entered did not match our records.");
                     });
             };
