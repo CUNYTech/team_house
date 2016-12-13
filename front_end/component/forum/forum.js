@@ -40,7 +40,7 @@
                             }
                             if (response['SearchResults:searchresults'].response.results.result.address)
                                 vm.post.zipcode = response['SearchResults:searchresults'].response.results.result.address.zipcode;
-                            console.log(response['SearchResults:searchresults'].response.results.result)
+                            // console.log(response['SearchResults:searchresults'].response.results.result);
                         }
                         $http.post('/post', vm.post)
                             .success(function(response) {
